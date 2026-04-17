@@ -3,6 +3,8 @@
     box-sizing: border-box;
 }
 
+/* Gestaltung des Headers */
+
 /* Gestaltung der Schrifte */
 /* arima-regular - latin */
 @font-face {
@@ -21,14 +23,14 @@
   src: url('/Assets/Cristian/arima-v7-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-header{
+.haupt-header{
     background-color: rgba(78, 164, 135, 1);
     display: flex;
     align-items: center;
     gap: 100px; 
     padding: 30px 145px;
 }
-header img{
+.haupt-header img{
     height: 70px;
     width: 70px;
 }
@@ -51,6 +53,12 @@ a{
 
 /* Hover‑Styling der Links */
 
+body:has(#highlights:target) .highlights-a[href="#highlights"], 
+body:has(#faq:target) .faq-a[href="#faq"], 
+body:has(#contact:target) .contact-a[href="#contact"] {
+    color: rgba(241, 201, 83, 1);
+}
+
 /* Highlights */
 .highlights-a{
     position: relative;
@@ -58,6 +66,7 @@ a{
 .highlights-img{
     display: none;
 }
+
 .highlights-a:hover .highlights-img{
     display: block;
     position: absolute;
@@ -113,3 +122,4 @@ a{
 .contact-a:active .contact-img{
      display: none;
 }
+
