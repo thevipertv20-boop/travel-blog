@@ -1,0 +1,154 @@
+/* DA | Umschulung zum Fachinformatiker AE | Projekt Sakura
+Stylesheet für die Webseite
+header.css
+wird in style.css per @import eingebunden */
+
+/* Gestaltung des Headers */
+
+/* Gestaltung der Schrifte */
+/* arima-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Arima';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../../Assets/Cristian/Fonts/arima-v7-latin-500.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* arima-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Arima';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../Assets/Cristian/Fonts/arima-v7-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* arima-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Arima';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../Assets/Cristian/Fonts/arima-v7-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+.haupt-header {
+    background-color: var(--dark-green);
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 30px 145px;
+}
+
+.haupt-header img {
+    height: 70px;
+    width: 70px;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+a {
+    font-family: 'Arima';
+    text-decoration: none;
+    color: rgba(248, 245, 235, 1);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Hover‑Styling der Links */
+
+body:has(#highlights:target) .highlights-a[href="#highlights"],
+body:has(#faq:target) .faq-a[href="#faq"],
+body:has(#contact:target) .contact-a[href="#contact"] {
+    color: var(--yellow);
+}
+
+/* Highlights */
+.highlights-a {
+    position: relative;
+}
+
+.highlights-img {
+    display: none;
+}
+
+.highlights-a:hover .highlights-img {
+    display: block;
+    position: absolute;
+    top: -9px;
+    right: -6px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.highlights-a:active {
+    color: var(--yellow);
+}
+
+.highlights-a:active .highlights-img {
+    display: none;
+}
+
+/* FAQ */
+.faq-a {
+    position: relative;
+}
+
+.faq-img {
+    display: none;
+}
+
+.faq-a:hover .faq-img {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.faq-a:active {
+    color: var(--yellow);
+}
+
+.faq-a:active .faq-img {
+    display: none;
+}
+
+/* Contact */
+.contact-a {
+    position: relative;
+}
+
+.contact-img {
+    display: none;
+}
+
+.contact-a:hover .contact-img {
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    width: 95px;
+    cursor: pointer;
+}
+
+.contact-a:active {
+    color: var(--yellow);
+}
+
+.contact-a:active .contact-img {
+    display: none;
+}
