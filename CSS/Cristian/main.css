@@ -39,103 +39,49 @@ wird in style.css per @import eingebunden */
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-.author-div h3,
-.author-div p 
-{
-    font-family: 'Palanquin';
-    font-size: 16px;
-}
-.role{
-    font-weight: normal;
+main {
+    padding: 80px 120px;
 }
 
-.article-header {
-    background-color: white;
-    display: block;
+.intro-container {
+    display: flex;
+    gap: 25px;
+
+    margin-bottom: 70px;
 }
 
-.header-h2 {
+.intro-article {
+    flex: 3;
+}
+
+.intro-article>h1 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--yellow);
+    line-height: 1.1;
+}
+
+.intro-article>h2 {
     font-family: 'Palanquin';
     font-weight: 600;
     font-size: 40px;
     color: var(--dark-green);
 }
 
-.header-h1 {
-    font-family: 'Arima';
-    font-weight: 700;
-    font-size: 64px;
-    color: var(--yellow);
-}
-
-.header-h1+p {
-    font-size: 28px;
-
-}
-
-p {
-    font-family: 'Palanquin';
+.intro-article>p {
+    font-family: Palanquin;
     font-size: 24px;
-}
-
-.text-ul {
-    font-family: 'Palanquin';
-    font-size: 24px;
-}
-
-.tipps-list, .useful-link {
-    font-family: 'Palanquin';
-    font-size: 24px;
-}
-
-.tile-tipps-div {
-    font-size: 28px;
-    font-weight: bold;
-    font-family: 'Palanquin';
-    color: var(--yellow);
-}
-.section-eight > p{
-    font-family: 'Arima';
-    font-size: 24px;
-    font-weight: 500;
-}
-.share-div a{
-    font-family: 'Arima';
-    font-size: 24px;
-    font-weight: bold;
-    color: var(--yellow);
-}
-
-/* Gestaltung des Mains */
-
-main {
-    padding: 80px 120px;
-}
-
-.container{
-    display: flex;
-    gap: 25px;
-}
-.sub-container{
-    flex: 3;
-    padding-bottom: 20px;
-}
-.sub-container h1{
-    line-height: 1.1;
-}
-.sub-container p{
     line-height: 1.4;
+
+    margin-bottom: 40px;
+}
+.meta-info{
+    font-family: Palanquin;
+    font-size: 16px;
 }
 
-.section-three,
-.section-four,
-.section-five,
-.section-six,
-.section-seven,
-.section-eight{
-    line-height: 1.4;
-}
-.author-div{
+.about-me {
     flex: 1;
 
     display: flex;
@@ -148,90 +94,91 @@ main {
     border-radius: 30px;
 
     height: fit-content;
-}
-.author-div h3 {
+
     text-align: center;
 }
 
-.meta-info-ul {
-    display: flex;
-    gap: 30px;
+.about-me h3,
+.about-me p {
+    font-family: 'Palanquin';
+    font-size: 16px;
 }
 
-.meta-info-ul li {
+.role {
+    font-weight: normal;
+}
+
+.meta-info {
     display: flex;
-    gap: 5px;
     align-items: center;
+    gap: 10px;
 }
 
-.text-ul {
-    list-style-type: disc;
-    padding-left: 30px
+.date,
+.time,
+.read,
+.shared {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-li::marker {
-    font-size: 10px;
+article p, .highlights, .tipps, .share{
+    line-height: 1.4;
+    font-family: 'Palanquin';
+    font-size: 24px;
 }
-
+.tipps h3{
+    font-family: 'Palanquin';
+    font-size: 28px;
+}
+figure {
+    display: flex;
+    justify-content: center;
+    padding: 90px 0px;
+}
 video {
     border-radius: 40px;
 }
-
-figure {
-    padding: 90px 0px;
-    display: flex;
-    justify-content: center;
+figure + p, .highlights{
+    margin-bottom: 30px;
 }
-
-.tipps-list li::marker {
-    font-size: 24px;
+.highlights ul{
+    list-style-type: disc;
+    padding-left: 30px;
 }
-
-.section-seven {
-    padding-left: 85px;
-    padding-right: 35px;
+.highlights li::marker {
+    font-size: 10px;
 }
-
-.tile-tipps-div {
+.highlights + p{
+    margin-bottom: 150px;
+}
+.tipps{
+    margin: 0px 35px 90px 85px;
+    padding: 20px 16px;
+    background-color: var(--light-green);
+    border-radius: 30px;
+    position: relative;
+}
+.title-tipps{
+    width: fit-content;
     padding: 10px 20px;
     display: flex;
     align-items: center;
     gap: 5px;
     border-radius: 30px;
     position: absolute;
-    top: -55px;
-    left: 10px;
+    top: -45px;
+    left: -80px;
     background-color: var(--dark-green);
     color: var(--yellow);
     transform: rotate(-20deg);
-}
-
-.section-seven {
-    position: relative;
-}
-
-.tipps-div {
-    background-color: var(--light-green);
-    border-radius: 30px;
-    padding: 20px 16px;
 }
 .useful-link{
     color: var(--dark-green);
     font-weight: bold;
 }
-.share-div{
-    background-color: var(--dark-green);
-    border-radius: 30px;
-    padding: 10px 24px;
-
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.share-div:hover{
-    cursor: pointer;
-}
-.section-eight{
+.share{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -241,28 +188,27 @@ figure {
     padding-right: 350px;
     padding-left: 350px;
 }
+.share p{
+    text-align: center;
+}
+.share-link-container{
+    background-color: var(--dark-green);
+    border-radius: 30px;
+    padding: 10px 24px;
 
-/* Gestaltung der Abstände der Sektionen*/
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.share-link-container a {
+    font-family: Arima;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--yellow);
 
-.container {
-    margin-bottom: 70px;
+    cursor: pointer;
 }
-
-.section-one{
-    margin-bottom: 40px;
-}
-.section-four,
-.section-five {
-    margin-bottom: 30px;
-}
-
-.section-six {
-    margin-bottom: 150px;
-}
-.section-seven {
-    margin-bottom: 90px;
-}
-.section-eight > p{
+.share > p{
     position: relative;
 }
 .share-pfeil-icon{

@@ -1,0 +1,88 @@
+/* DA | Umschulung zum Fachinformatiker AE | Projekt Sakura
+Stylesheet für die Webseite
+header.css
+wird in footer.css per @import eingebunden */
+
+/* Gestaltung des Footers */
+/* Gestaltung der Schrifte */
+
+.pflicht-links a {
+    font-family: 'Palanquin';
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* Grundgestaltung des Footers */
+footer {
+    padding: 60px 120px;
+    background-color: var(--dark-green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pflicht-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.pflicht-links a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    cursor: default;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.social-media a {
+    cursor: default;
+}
+
+.tiktok {
+    background-color: var(--yellow);
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+
+    text-align: center;
+    padding: 2px;
+}
+
+.youtube {
+    height: 30px;
+    width: 45px;
+    background-color: var(--yellow);
+    border-radius: 10px;
+
+    text-align: center;
+    padding: 2px;
+}
+
+.facebook {
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+    background-color: var(--yellow);
+
+    text-align: center;
+    padding: 2px;
+}
+
+.instagram {
+    background-color: var(--yellow);
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+
+    text-align: center;
+    padding: 2px;
+}
