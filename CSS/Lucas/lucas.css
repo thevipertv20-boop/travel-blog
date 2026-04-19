@@ -329,12 +329,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     user-select: none;
 }
 
-/*
-  Default positions & tilts — fan spread.
-  Cards are laid out left-to-right. The left cards tilt right (positive rotate),
-  right cards tilt left (negative rotate), centre is roughly upright but slightly scaled.
-  Positions match the fanned look in Carousel_02 row 1.
-*/
+
 
 /* Card 1 — far left, strong tilt right */
 .slide:nth-child(1) {
@@ -386,11 +381,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     z-index: 1;
 }
 
-/*
-  On hover of ANY slide:
-  - The hovered slide goes straight (rotate 0, scale up slightly, raise z-index)
-  - All other slides keep their own tilt but are dimmed slightly
-*/
+
 
 /* When hovering card 1 */
 .carousel:has(.slide:nth-child(1):hover) .slide:nth-child(1) {
@@ -428,11 +419,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     z-index: 10;
 }
 
-/*
-  Whole-carousel hover — all cards unfan and spread into a flat row.
-  Each card straightens to rotate(0) and shifts to its spread position.
-  Individual card hover overrides still apply on top via higher specificity.
-*/
+
 .carousel:hover .slide:nth-child(1) {
     transform: translateX(-480px) rotate(0deg);
     z-index: 1;
