@@ -1,0 +1,443 @@
+/* =============================================
+   BASE
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Palanquin', Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #3D3D3D;
+    line-height: 1.2;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================
+   HEADER (Cristian)
+   ============================================= */
+.haupt-header {
+    background-color: #4EA487;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 30px 145px;
+    position: relative;
+    z-index: 10;
+}
+
+.haupt-header img {
+    height: 70px;
+    width: 70px;
+}
+
+.haupt-header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.haupt-header nav a {
+    font-family: 'Arima', cursive;
+    text-decoration: none;
+    color: #F8F5EB;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+body:has(#highlights:target) .haupt-header .highlights-a[href="#highlights"],
+body:has(#faq:target) .haupt-header .faq-a[href="#faq"],
+body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
+    color: #F1C953;
+}
+
+.haupt-header .highlights-img,
+.haupt-header .faq-img,
+.haupt-header .contact-img {
+    display: none;
+}
+
+.haupt-header .highlights-a:hover .highlights-img {
+    display: block;
+    position: absolute;
+    top: -9px;
+    right: -6px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.haupt-header .highlights-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .highlights-a:active .highlights-img {
+    display: none;
+}
+
+.haupt-header .faq-a:hover .faq-img {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.haupt-header .faq-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .faq-a:active .faq-img {
+    display: none;
+}
+
+.haupt-header .contact-a:hover .contact-img {
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    width: 95px;
+    cursor: pointer;
+}
+
+.haupt-header .contact-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .contact-a:active .contact-img {
+    display: none;
+}
+
+/* =============================================
+   HERO / CARD (Lucas)
+   ============================================= */
+.hero {
+    background: #fff;
+    height: 530px;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    background: #F5C842;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    opacity: 0;
+    transform: scale(1);
+    animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+}
+
+@keyframes cardIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+.text-side {
+    flex: 0 0 45%;
+    padding: 72px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 2;
+}
+
+.title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #2C1A0E;
+    line-height: 1.1;
+    opacity: 0;
+    transform: translateX(-22px);
+    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.0s forwards;
+}
+
+.subtitle {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #5C3A1E;
+    line-height: 1.6;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateX(-18px);
+    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards;
+}
+
+@keyframes slideInLeft {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.image-side {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    clip-path: url(#swoosh);
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #c0392b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.badge {
+    position: absolute;
+    bottom: 50px;
+    left: calc(52% - 40px);
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    opacity: 0;
+    animation: badgeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.6s forwards;
+}
+
+@keyframes badgeIn {
+    to { opacity: 1; }
+}
+
+.badge-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
+
+.badge-center {
+    position: absolute;
+    inset: 8px;
+    background: #1a7a5e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+}
+
+
+/* =============================================
+   FOOTER (Lucas)
+   ============================================= */
+.footer {
+    background: #4EA487;
+    padding: 60px 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+    min-height: 152px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-copy {
+    color: #FFFFFF;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1200px) {
+    .haupt-header {
+        padding: 30px 60px;
+        gap: 60px;
+    }
+    .highlights,
+    .faq,
+    .contact {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .footer {
+        padding: 40px 60px;
+    }
+}
+
+@media (max-width: 900px) {
+    .haupt-header {
+        padding: 20px 24px;
+        gap: 32px;
+    }
+    .haupt-header img {
+        height: 56px;
+        width: 56px;
+    }
+    .haupt-header nav ul {
+        gap: 32px;
+    }
+    .haupt-header nav a {
+        font-size: 20px;
+    }
+    .hero {
+        height: 530px;
+        padding: 0;
+    }
+    .card {
+        width: 100%;
+        max-width: none;
+    }
+    .highlights,
+    .faq,
+    .contact {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .highlight-showcase {
+        height: 320px;
+        border-radius: 0 40px 0 0;
+    }
+    .showcase-text h3 {
+        font-size: 22px;
+    }
+    .footer {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 24px;
+    }
+    .socials {
+        margin-left: 0;
+    }
+    .footer-links {
+        gap: 32px;
+    }
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero {
+        height: 530px;
+        padding: 0;
+    }
+    .card {
+        width: 100%;
+        max-width: none;
+        height: 100%;
+        flex-direction: column;
+    }
+    .text-side {
+        flex: 0 0 auto;
+        padding: 24px;
+    }
+    .image-side {
+        flex: 1;
+        height: auto;
+    }
+    .text-side {
+        flex: none;
+        padding: 24px;
+    }
+    .image-side {
+        height: 160px;
+    }
+    .badge {
+        left: calc(50% - 28px);
+        bottom: 10px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .highlight-showcase {
+        height: 260px;
+        padding: 24px;
+    }
+    .showcase-text {
+        left: 24px;
+        top: 24px;
+    }
+    .showcase-text h3 {
+        font-size: 18px;
+    }
+    .faq-item summary {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+    .faq-content {
+        padding: 0 18px 14px;
+    }
+}
