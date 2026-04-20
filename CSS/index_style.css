@@ -272,137 +272,192 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 /* =============================================
-   Highlights Section (Cristian)
+   Contact Formular (Sebastian)
    ============================================= */
 
-.highlights {
-    max-width: 1200px;
-    margin: 80px auto;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 90px;
+.faq {
+  padding: 60px 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.highlights-title h2{
-    font-family: 'Arima';
-    color: rgba(78, 164, 135, 1);
-    font-weight: 700;
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 48px;
+  color: rgba(78, 164, 135, 1);
+  font-family: 'Arima', cursive;
+  margin: 0;
+}
+
+.faq-icon {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #e0b84c;
+  color: #e0b84c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.faq-item {
+  background: rgba(241, 201, 83, 1);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 0 20px;
+  border: none;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  display: flex;
+  align-items: center;  
+  height: 56px;          
+}
+
+.faq-item summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+}
+
+.faq-item[open] summary::after {
+  content: "⌃";
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item:hover {
+  background: #ddb84f;
+}
+
+
+
+.contact h2{ 
+    text-align: center;
+    font-family: 'Arima', cursive;
     font-size: 52px;
+    font-weight: 600;
+    color: rgba(78, 164, 135, 1);
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
 }
-.highlights-title{
-    display: flex;
-    align-items: center;
-    gap: 5px;
+.section-subtitle{ 
+    text-align: center;
+    font-family: 'palanquin', cursive;
+    font-size: 24px;
+    font-weight: 500;
+    color:rgba(84, 55, 13, 1) ;
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
 }
 
-.highlights-subtitle {
-    font-family: 'Palanquin';
-    color: rgba(84, 55, 13, 1);
+.form-full{
+    
+    width: 100% !important;
+    max-width: 1096px !important;
+    margin-left: 80px !important;
+    border: none !important;
+    border-bottom: solid 2px !important;
+    font-family: 'palanquin', cursive !important;
+    font-weight: 600 !important;
+}
+
+input:focus {
+  border-bottom: 1.5px solid rgba(84, 55, 13, 1);
+}
+
+input[type="text"]{ 
+    height: 94px;
+    width: 527px;
+    
+    border: none;
+    border-bottom: solid 2px;
+   
+
+}
+
+input::placeholder{ 
+    font-family: 'palanquin', cursive;
     font-weight: 500;
     font-size: 24px;
+    color: rgba(84, 55, 13, 1);
+}
 
+
+
+input[type="email"]{ 
+    height: 94px;
+    width: 527px;
+    
+    border: none;
+    border-bottom: solid 2px;
+    
+    
+}
+
+.contact-form{ 
     text-align: center;
+    font-family: 'palanquin', cursive;
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(84, 55, 13, 1) ;
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
 }
-.highlights-wrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-}
-.highlight-showcase{
-    
-    width: 1200px;
-    height: 533px;
-    
+
+.container{ 
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-
-    position: relative;
-
-    overflow: hidden;
-}
-.highlight-showcase input{
-    z-index: 2;
-}
-.slider-wrapper{
-    z-index: 1;
-
-    width: 400%;
-    height: 100%;
-
-    position: absolute;
-    display: flex;
-
-    transition: all 1s ease-in-out;
-}
-.slide{
-    height: 100%;
-    width: calc(100% / 4);
-}
-.s-one{
-    background-image: url(../Assets/Cristian/Images/highlights-bg.png); 
-}
-.s-two{
-    background-image: url("../../Assets/Lucas/slider_2.JPG");
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top-right-radius: 100px;
-}
-.s-three{
-    background-image: url(../Assets/Cristian/Images/copenhagen.jpeg);
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top-right-radius: 100px;
-}
-.s-four{
-    background-image: url(../Assets/Cristian/Images/pattaya-beach.jpg);
-    background-color: white;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-top-right-radius: 100px;
+    padding: 56px;
+    
 }
 
-.highlight-showcase input[value="one"]:checked~.slider-wrapper{
-    transform: translateX(1800px);
-}
-.highlight-showcase input[value="two"]:checked~.slider-wrapper{
-    transform: translateX(600px);
-}
-.highlight-showcase input[value="three"]:checked~.slider-wrapper{
-    transform: translateX(-600px);
-}
-.highlight-showcase input[value="four"]:checked~.slider-wrapper{
-    transform: translateX(-1800px);
-}
-.slide-text{
-    padding: 15px 25px;
-    width: 880px;
-    height: 230px; 
-    margin: 70px 0px 45px 40px;
-} 
-.slide h3 {
-    font-family: 'Palanquin';
-    color: white;
-    font-weight: 600;
-    font-size: 48px;
+.form-checkbox {
+  display: block;
+  margin-top: 30px;
+  font-weight: 500;
 }
 
-.slide p {
-    font-family: 'Palanquin';
-    color: white;
-    font-weight: 400;
-    font-size: 28px;
-}
-.dot{
-    font-size: 100px;
+.privacy{ 
+    text-decoration-line: none;
+    color: rgba(78, 164, 135, 1);
 }
 
+.btn-send {
+  padding: 10px 30px;
+  border: 1px solid #aaa;
+  border-radius: 25px; /* macht ihn oval */
+  background: transparent;
+  color: #777;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  background: #aaa;
+  color: white;
+}
+
+.btn-send {
+  display: block;
+  margin: 20px auto;
+}
+
+    
 /* =============================================
    FOOTER (Lucas)
    ============================================= */
