@@ -258,7 +258,193 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     line-height: 1;
 }
 
+/* =============================================
+   Contact Formular (Sebastian)
+   ============================================= */
 
+.faq {
+  padding: 60px 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title h2 {
+  font-size: 48px;
+  color: rgba(78, 164, 135, 1);
+  font-family: 'Arima', cursive;
+  margin: 0;
+}
+
+.faq-icon {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #e0b84c;
+  color: #e0b84c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.faq-item {
+  background: rgba(241, 201, 83, 1);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  padding: 0 20px;
+  border: none;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  display: flex;
+  align-items: center;  
+  height: 56px;          
+}
+
+.faq-item summary::after {
+  content: "⌄";
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+}
+
+.faq-item[open] summary::after {
+  content: "⌃";
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item:hover {
+  background: #ddb84f;
+}
+
+
+
+.contact h2{ 
+    text-align: center;
+    font-family: 'Arima', cursive;
+    font-size: 52px;
+    font-weight: 600;
+    color: rgba(78, 164, 135, 1);
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
+}
+.section-subtitle{ 
+    text-align: center;
+    font-family: 'palanquin', cursive;
+    font-size: 24px;
+    font-weight: 500;
+    color:rgba(84, 55, 13, 1) ;
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
+}
+
+.form-full{
+    
+    width: 100% !important;
+    max-width: 1096px !important;
+    margin-left: 80px !important;
+    border: none !important;
+    border-bottom: solid 2px !important;
+    font-family: 'palanquin', cursive !important;
+    font-weight: 600 !important;
+}
+
+input:focus {
+  border-bottom: 1.5px solid rgba(84, 55, 13, 1);
+}
+
+input[type="text"]{ 
+    height: 94px;
+    width: 527px;
+    
+    border: none;
+    border-bottom: solid 2px;
+   
+
+}
+
+input::placeholder{ 
+    font-family: 'palanquin', cursive;
+    font-weight: 500;
+    font-size: 24px;
+    color: rgba(84, 55, 13, 1);
+}
+
+
+
+input[type="email"]{ 
+    height: 94px;
+    width: 527px;
+    
+    border: none;
+    border-bottom: solid 2px;
+    
+    
+}
+
+.contact-form{ 
+    text-align: center;
+    font-family: 'palanquin', cursive;
+    font-size: 24px;
+    font-weight: 600;
+    color:rgba(84, 55, 13, 1) ;
+    line-height: 120%;
+    margin: 0;
+    width: 100%;
+}
+
+.container{ 
+    display: flex;
+    justify-content: center;
+    padding: 56px;
+    
+}
+
+.form-checkbox {
+  display: block;
+  margin-top: 30px;
+  font-weight: 500;
+}
+
+.privacy{ 
+    text-decoration-line: none;
+    color: rgba(78, 164, 135, 1);
+}
+
+.btn-send {
+  padding: 10px 30px;
+  border: 1px solid #aaa;
+  border-radius: 25px; /* macht ihn oval */
+  background: transparent;
+  color: #777;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  background: #aaa;
+  color: white;
+}
+
+.btn-send {
+  display: block;
+  margin: 20px auto;
+}
+
+    
 /* =============================================
    FOOTER (Lucas)
    ============================================= */
