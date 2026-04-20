@@ -38,16 +38,21 @@ wird in style.css per @import eingebunden */
     src: url('../../Assets/Cristian/Fonts/palanquin-v17-latin-700.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
 main {
-    padding: 80px 120px;
+    max-width: 1200px;
+    margin: 80px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro-container {
     display: flex;
     gap: 25px;
-
-    margin-bottom: 70px;
+    align-items: center;
+    margin-bottom: 50px;
 }
 
 .intro-article {
@@ -71,9 +76,10 @@ main {
 
 .intro-article>p {
     font-family: Palanquin;
-    font-size: 24px;
+    font-size: 28px;
     line-height: 1.4;
-
+    color: rgba(84, 55, 13, 1);
+    
     margin-bottom: 40px;
 }
 .meta-info{
@@ -82,20 +88,16 @@ main {
 }
 
 .about-me {
-    flex: 1;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 15px;
     gap: 15px;
-
     background-color: var(--light-green);
     border-radius: 30px;
-
     height: fit-content;
-
     text-align: center;
+    width: 272px;
 }
 
 .about-me h3,
@@ -184,9 +186,8 @@ figure + p, .highlights{
     align-items: center;
     justify-content: center;
     gap: 50px;
-    
-    padding-right: 350px;
-    padding-left: 350px;
+    width: 490px;
+    height: 150px;
 }
 .share p{
     text-align: center;
