@@ -270,7 +270,137 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     font-size: 16px;
     line-height: 1;
 }
+/* =============================================
+   Highlights Section (Cristian)
+   ============================================= */
 
+.highlights {
+    max-width: 1200px;
+    margin: 80px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+.highlights-title h2{
+    font-family: 'Arima';
+    color: rgba(78, 164, 135, 1);
+    font-weight: 700;
+    font-size: 52px;
+}
+.highlights-title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.highlights-subtitle {
+    font-family: 'Palanquin';
+    color: rgba(84, 55, 13, 1);
+    font-weight: 500;
+    font-size: 24px;
+
+    text-align: center;
+}
+.highlights-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.highlight-showcase{
+    
+    width: 1200px;
+    height: 533px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+}
+.highlight-showcase input{
+    z-index: 2;
+}
+.slider-wrapper{
+    z-index: 1;
+
+    width: 400%;
+    height: 100%;
+
+    position: absolute;
+    display: flex;
+
+    transition: all 1s ease-in-out;
+}
+.slide{
+    height: 100%;
+    width: calc(100% / 4);
+}
+.s-one{
+    background-image: url(../Assets/Cristian/Images/highlights-bg.png); 
+}
+.s-two{
+    background-image: url("../../Assets/Lucas/slider_2.JPG");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+.s-three{
+    background-image: url(../Assets/Cristian/Images/copenhagen.jpeg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+.s-four{
+    background-image: url(../Assets/Cristian/Images/pattaya-beach.jpg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+
+.highlight-showcase input[value="one"]:checked~.slider-wrapper{
+    transform: translateX(1800px);
+}
+.highlight-showcase input[value="two"]:checked~.slider-wrapper{
+    transform: translateX(600px);
+}
+.highlight-showcase input[value="three"]:checked~.slider-wrapper{
+    transform: translateX(-600px);
+}
+.highlight-showcase input[value="four"]:checked~.slider-wrapper{
+    transform: translateX(-1800px);
+}
+.slide-text{
+    padding: 15px 25px;
+    width: 880px;
+    height: 230px; 
+    margin: 70px 0px 45px 40px;
+} 
+.slide h3 {
+    font-family: 'Palanquin';
+    color: white;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+.slide p {
+    font-family: 'Palanquin';
+    color: white;
+    font-weight: 400;
+    font-size: 28px;
+}
+.dot{
+    font-size: 100px;
+}
 /* =============================================
    Contact Formular (Sebastian)
    ============================================= */
