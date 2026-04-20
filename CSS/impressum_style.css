@@ -1,0 +1,343 @@
+/* =============================================
+   BASE
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Palanquin', Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #3D3D3D;
+    line-height: 1.2;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =============================================
+   HEADER (Cristian)
+   ============================================= */
+.haupt-header {
+    background-color: #4EA487;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    padding: 30px 145px;
+    position: relative;
+    z-index: 10;
+}
+
+.haupt-header img {
+    height: 70px;
+    width: 70px;
+}
+
+.haupt-header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.haupt-header nav a {
+    font-family: 'Arima', cursive;
+    text-decoration: none;
+    color: #F8F5EB;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+.haupt-header .highlights-img,
+.haupt-header .faq-img,
+.haupt-header .contact-img {
+    display: none;
+}
+
+.haupt-header .highlights-a:hover .highlights-img {
+    display: block;
+    position: absolute;
+    top: -9px;
+    right: -6px;
+    width: 120px;
+    cursor: pointer;
+}
+
+.haupt-header .highlights-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .highlights-a:active .highlights-img {
+    display: none;
+}
+
+.haupt-header .faq-a:hover .faq-img {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.haupt-header .faq-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .faq-a:active .faq-img {
+    display: none;
+}
+
+.haupt-header .contact-a:hover .contact-img {
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    width: 95px;
+    cursor: pointer;
+}
+
+.haupt-header .contact-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .contact-a:active .contact-img {
+    display: none;
+}
+
+/* =============================================
+   IMPRESSUM
+   ============================================= */
+.impressum {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 24px;
+    width: 100%;
+}
+
+.impressum h1 {
+    font-family: 'Arima', cursive;
+    font-size: 52px;
+    font-weight: 700;
+    color: #4EA487;
+    line-height: 120%;
+    margin-bottom: 16px;
+}
+
+.impressum > p:first-of-type {
+    font-family: 'Palanquin', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #54370D;
+    margin-bottom: 48px;
+}
+
+.impressum-block {
+    margin-bottom: 32px;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #3D3D3D;
+    line-height: 160%;
+}
+
+.impressum-block p {
+    margin-bottom: 16px;
+}
+
+.impressum-block p:last-child {
+    margin-bottom: 0;
+}
+
+.impressum-block strong {
+    color: #54370D;
+    font-weight: 700;
+}
+
+.impressum a {
+    color: #4EA487;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.impressum a:hover {
+    color: #2a6b5e;
+}
+
+.disclaimer {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.disclaimer p {
+    margin: 0;
+    text-align: justify;
+}
+
+.impressum-source {
+    margin-top: 48px;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+.impressum-source a {
+    color: #4EA487;
+    text-decoration: underline;
+}
+
+/* =============================================
+   FOOTER (Lucas)
+   ============================================= */
+.footer {
+    background: #4EA487;
+    padding: 60px 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+    min-height: 152px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-copy {
+    color: #FFFFFF;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1200px) {
+    .haupt-header {
+        padding: 30px 60px;
+        gap: 60px;
+    }
+
+    .footer {
+        padding: 40px 60px;
+    }
+
+    .impressum {
+        margin: 60px auto;
+        padding: 0 60px;
+    }
+}
+
+@media (max-width: 900px) {
+    .haupt-header {
+        padding: 20px 24px;
+        gap: 32px;
+    }
+
+    .haupt-header img {
+        height: 56px;
+        width: 56px;
+    }
+
+    .haupt-header nav ul {
+        gap: 32px;
+    }
+
+    .haupt-header nav a {
+        font-size: 20px;
+    }
+
+    .impressum {
+        margin: 48px auto;
+        padding: 0 24px;
+    }
+
+    .impressum h1 {
+        font-size: 40px;
+    }
+
+    .impressum-block {
+        font-size: 16px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px 24px;
+    }
+
+    .socials {
+        margin-left: 0;
+    }
+
+    .footer-links {
+        gap: 32px;
+    }
+}
+
+@media (max-width: 520px) {
+    .impressum h1 {
+        font-size: 32px;
+    }
+
+    .impressum > p:first-of-type {
+        font-size: 18px;
+    }
+}

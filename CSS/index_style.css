@@ -131,7 +131,12 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 /* =============================================
-   HERO / CARD (Lucas)
+   HERO CARD — reveal animation
+   
+   1) Alles startet gelb, Text taucht von unten auf
+   2) Roter Swoosh schiebt sich von rechts rein,
+      Text rückt dabei nach links
+   3) Badge ploppt an der Kurve auf
    ============================================= */
 .hero {
     background: #fff;
@@ -140,29 +145,30 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     align-items: stretch;
     justify-content: stretch;
     padding: 0;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Karte faden sich kurz ein, damit nichts flickert */
 .card {
     width: 100%;
     height: 100%;
     background: #F5C842;
     border-radius: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: stretch;
     opacity: 0;
-    transform: scale(1);
-    animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    animation: cardFadeIn 0.4s ease 0.1s forwards;
 }
 
-@keyframes cardIn {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+@keyframes cardFadeIn {
+    to { opacity: 1; }
 }
 
+/* Text startet mittig über der gelben Fläche und rückt 
+   beim Swoosh-Reinslide nach links in seine finale Position */
 .text-side {
     flex: 0 0 45%;
     padding: 72px 60px;
@@ -170,8 +176,15 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+    transform: translateX(55%);
+    animation: textShiftLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
 }
 
+@keyframes textShiftLeft {
+    to { transform: translateX(0); }
+}
+
+/* Title & Subtitle steigen elegant von unten hoch */
 .title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 48px;
@@ -179,8 +192,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     color: #2C1A0E;
     line-height: 1.1;
     opacity: 0;
-    transform: translateX(-22px);
-    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.0s forwards;
+    transform: translateY(28px);
+    animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
 }
 
 .subtitle {
@@ -191,55 +204,47 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     line-height: 1.6;
     margin-top: 10px;
     opacity: 0;
-    transform: translateX(-18px);
-    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards;
+    transform: translateY(20px);
+    animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
 }
 
-@keyframes slideInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+@keyframes riseIn {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.image-side {
+/* Roter Swoosh-Bereich startet komplett außerhalb rechts 
+   und schiebt sich nach 1,4s langsam ins Bild */
+.swoosh {
     position: absolute;
-    right: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    clip-path: url(#swoosh);
+    transform: translateX(100%);
+    animation: swooshSlide 1.5s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
 }
 
-.image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #c0392b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+@keyframes swooshSlide {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
 }
 
+/* Badge sitzt auf der Kurvenspitze und ploppt 
+   gegen Ende der Animation auf */
 .badge {
     position: absolute;
-    bottom: 50px;
-    left: calc(52% - 40px);
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
     z-index: 10;
+    left: 28%;
+    top: 51%;
     opacity: 0;
-    animation: badgeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.6s forwards;
+    transform: translateY(160px);
+    animation: badgeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
 }
 
-@keyframes badgeIn {
-    to {
-        opacity: 1;
-    }
+@keyframes badgeSlideUp {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .badge-ring {
@@ -250,26 +255,22 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
 .badge-center {
     position: absolute;
-    inset: 8px;
+    inset: 18px;
     background: #1a7a5e;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 32px;
     line-height: 1;
 }
+
 /* =============================================
    Highlights Section (Cristian)
    ============================================= */
@@ -277,6 +278,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 .highlights {
     max-width: 1200px;
     margin: 80px auto;
+    position: relative;
+    z-index: 1;
 
     display: flex;
     flex-direction: column;
@@ -750,23 +753,21 @@ input[type="email"]{
         padding: 24px;
     }
 
-    .image-side {
-        flex: 1;
-        height: auto;
-    }
-
     .text-side {
         flex: none;
         padding: 24px;
     }
 
-    .image-side {
-        height: 160px;
+    .badge {
+        left: 50%;
+        top: auto;
+        bottom: 10px;
+        transform: translateX(-50%) translateY(160px);
+        animation: badgeSlideUpMobile 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
     }
 
-    .badge {
-        left: calc(50% - 28px);
-        bottom: 10px;
+    @keyframes badgeSlideUpMobile {
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
     }
 
     .section-title {
