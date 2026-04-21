@@ -1,63 +1,46 @@
-/* palanquin-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 400;
-  src: url('Sebastian/fonts/palanquin-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+/* =============================================
+   BASE
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* palanquin-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Palanquin';
-  font-style: normal;
-  font-weight: 600;
-  src: url('Sebastian/fonts/palanquin-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+body {
+    font-family: 'Palanquin', Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #3D3D3D;
+    line-height: 1.2;
 }
 
-/* arima-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Arima';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/arima-v7-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+.page-wrapper {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* arima-500 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Arima';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../fonts/arima-v7-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* arima-600 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Arima';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../fonts/arima-v7-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* arima-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Arima';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/arima-v7-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
+/* =============================================
+   HEADER (Cristian)
+   ============================================= */
 .haupt-header {
-    background-color: var(--dark-green);
+    background-color: #4EA487;
     display: flex;
     align-items: center;
     gap: 100px;
     padding: 30px 145px;
+    position: relative;
+    z-index: 10;
 }
 
 .haupt-header img {
@@ -65,43 +48,32 @@
     width: 70px;
 }
 
-nav ul {
+.haupt-header nav ul {
     display: flex;
     align-items: center;
     gap: 70px;
-}
-
-ul {
     list-style: none;
     padding-inline-start: 0;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-    font-family: 'Arima';
+.haupt-header nav a {
+    font-family: 'Arima', cursive;
     text-decoration: none;
-    color: rgba(248, 245, 235, 1);
+    color: #F8F5EB;
     font-size: 24px;
     font-weight: bold;
-}
-
-/* Hover‑Styling der Links */
-
-body:has(#highlights:target) .highlights-a[href="#highlights"],
-body:has(#faq:target) .faq-a[href="#faq"],
-body:has(#contact:target) .contact-a[href="#contact"] {
-    color: var(--yellow);
-}
-
-/* Highlights */
-.highlights-a {
     position: relative;
 }
 
-.highlights-img {
+.haupt-header .highlights-img,
+.haupt-header .faq-img,
+.haupt-header .contact-img {
     display: none;
 }
 
-.highlights-a:hover .highlights-img {
+.haupt-header .highlights-a:hover .highlights-img {
     display: block;
     position: absolute;
     top: -9px;
@@ -110,10 +82,467 @@ body:has(#contact:target) .contact-a[href="#contact"] {
     cursor: pointer;
 }
 
-.highlights-a:active {
-    color: var(--yellow);
+.haupt-header .highlights-a:active {
+    color: #F1C953;
 }
 
-.highlights-a:active .highlights-img {
+.haupt-header .highlights-a:active .highlights-img {
     display: none;
+}
+
+.haupt-header .faq-a:hover .faq-img {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 55px;
+    cursor: pointer;
+}
+
+.haupt-header .faq-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .faq-a:active .faq-img {
+    display: none;
+}
+
+.haupt-header .contact-a:hover .contact-img {
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: -4px;
+    width: 95px;
+    cursor: pointer;
+}
+
+.haupt-header .contact-a:active {
+    color: #F1C953;
+}
+
+.haupt-header .contact-a:active .contact-img {
+    display: none;
+}
+/* =============================================
+   FOOTER (Lucas)
+   ============================================= */
+.footer {
+    background: #4EA487;
+    padding: 60px 120px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+    min-height: 152px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-copy {
+    color: #FFFFFF;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.footer-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.social:hover {
+    transform: translateY(-2px);
+}
+
+/* DA | Umschulung zum Fachinformatiker AE | Projekt Sakura
+Stylesheet für die Webseite
+main.css
+wird in style.css per @import eingebunden */
+
+/* Gestaltung des Main-Bereichs */
+
+/* Gestaltung der Schrifte */
+/* palanquin-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/../../Assets/Cristian/Fonts/palanquin-v17-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* palanquin-600 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../Assets/Cristian/Fonts/palanquin-v17-latin-600.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* palanquin-700 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Palanquin';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../../Assets/Cristian/Fonts/palanquin-v17-latin-700.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+    --yellow: #E5B64B;
+    --dark-green: #5FA38C;
+    --text-brown: #5A3B1A;
+}
+
+main {
+    max-width: 1200px;
+    margin: 80px auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.intro-article {
+    flex: 3;
+}
+
+.intro-article>h1 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--yellow);
+    line-height: 1.1;
+}
+
+.intro-article>h2 {
+    font-family: 'Palanquin';
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--dark-green);
+}
+
+.intro-article>p {
+    font-family: 'Palanquin';
+    font-size: 28px;
+    line-height: 1.4;
+    color: var(--text-brown);
+    
+    margin-bottom: 40px;
+}
+.meta-info{
+    font-family: Palanquin;
+    font-size: 16px;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;       
+    gap: 15px;
+
+    background-color: rgba(78, 164, 135, 0.2); 
+    border-radius: 40px;       
+    
+    width: 280px;
+    text-align: center;
+}
+
+.about-me img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white; 
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Arima', serif; 
+    font-size: 40px;
+    font-weight: 700;
+    color: #5a3b1a; 
+    margin-bottom: 30px;
+}
+
+.diagramm {
+     width: 640px;
+    height: auto;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    display: block;
+    margin: 40px auto; 
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    background-color: rgba(78, 164, 135, 0.2);
+    border-radius: 30px;
+    height: fit-content;
+    text-align: center;
+    width: 272px;
+}
+
+/* Section */
+.info-section {
+    margin: 60px auto;
+}
+
+/* Wrapper */
+.cards-wrapper {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: stretch; /* 🔥 gleiche Höhe */
+}
+
+/* Card */
+.card {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Text */
+.card p {
+    font-family: 'Palanquin';
+    font-size: 18px;
+    line-height: 1.6;
+    color: #6b6b6b;
+
+    max-width: 500px;
+    margin: 0 auto 30px;
+    text-align: left;
+}
+
+/* Titel */
+.card h3 {
+    font-family: 'Arima';
+    font-size: 32px;
+    font-weight: 600;
+    color: #5A3B1A;
+    margin-bottom: 20px;
+}
+
+/* Card Hintergrund */
+.image-card {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 
+        0 15px 30px rgba(0,0,0,0.1),
+        inset 0 2px 4px rgba(255,255,255,0.6);
+
+    margin-top: auto; /* 🔥 DAS ist der Trick */
+}
+
+/* Bild */
+.image-card img {
+    width: 100%;      /* 🔥 NICHT fix */
+    height: auto;
+    display: block;
+    border-radius: 25px;
+}
+
+.about-me h3,
+.about-me p {
+    font-family: 'Palanquin';
+    font-size: 16px;
+}
+
+.role {
+    font-weight: normal;
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date,
+.time,
+.read,
+.shared {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+article p, .highlights, .tipps, .share{
+    line-height: 1.4;
+    font-family: 'Palanquin';
+    font-size: 24px;
+}
+.tipps h3{
+    font-family: 'Palanquin';
+    font-size: 28px;
+}
+figure {
+    display: flex;
+    justify-content: center;
+    padding: 90px 0px;
+}
+video {
+    border-radius: 40px;
+}
+figure + p, .highlights{
+    margin-bottom: 30px;
+}
+.highlights ul{
+    list-style-type: disc;
+    padding-left: 30px;
+}
+.highlights li::marker {
+    font-size: 10px;
+}
+.highlights + p{
+    margin-bottom: 150px;
+}
+.tipps{
+    margin: 0px 35px 90px 85px;
+    padding: 20px 16px;
+    background-color: var(--light-green);
+    border-radius: 30px;
+    position: relative;
+}
+.title-tipps{
+    width: fit-content;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 30px;
+    position: absolute;
+    top: -45px;
+    left: -80px;
+    background-color: var(--dark-green);
+    color: var(--yellow);
+    transform: rotate(-20deg);
+}
+
+.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 490px;
+    height: 150px;
+}
+.share p{
+    text-align: center;
+}
+.share-links-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hover-links{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: var(--dark-green);
+    display: none;
+}
+.hover-links a{
+    font-family: 'Arima';
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dark-green);
+
+    text-decoration-line: underline;
+}
+.hover-links a:active{
+    font-weight: 700;
+}
+.share-link-container{
+    background-color: var(--dark-green);
+    border-radius: 30px;
+    padding: 10px 24px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.share-link-container a {
+    font-family: Arima;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--yellow);
+
+    cursor: pointer;
+}
+.hover-share-icon-two{
+    width: 24px;
+    height: 27px;
+    display: none;
+}
+
+.share-links-wrapper:hover .hover-share-icon-one{
+    display: none;
+}
+.share-links-wrapper:hover .hover-links,
+.share-links-wrapper:hover .hover-share-icon-two{
+    display: flex;
+}
+.share > p{
+    position: relative;
+}
+.share-pfeil-icon{
+    position: absolute;
+    left: -45px;
+    bottom: -75px;
 }
