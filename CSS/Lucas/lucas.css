@@ -448,85 +448,84 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     font-weight: 700;
 }
 
-/* CTA Share */
-.cta-share {
-    text-align: center;
-    padding: 0;
-    position: relative;
+/* Share (from Cristian) */
+.share {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0;
-    /* need height room for the arrow to sit between text and button */
-    padding-bottom: 0;
+    justify-content: center;
+    gap: 50px;
+    width: 490px;
+    height: 150px;
+    margin: 0 auto;
 }
-
-.cta-share p {
+.share p {
+    text-align: center;
     font-family: 'Arima', cursive;
     font-size: 24px;
     font-weight: 500;
     line-height: 120%;
     color: #54370D;
-    margin: 0;
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-}
-
-.cta-target {
-    display: inline-block;
     position: relative;
 }
-
-/* Arrow is absolutely positioned, tail beside "teile", head at left of button */
-.cta-arrow {
-    position: absolute;
-    left: -4px;
-    top: 100%;
-    margin-top: -16px;
-    width: 140px;
-    height: 120px;
-    display: block;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.btn-share {
-    background: #4EA487;
-    color: #F1C953;
-    border: none;
-    padding: 0 28px;
-    border-radius: 40px;
-    font-family: 'Arima', cursive;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    height: 52px;
-    line-height: 1;
-    margin-top: 80px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Icon: just the yellow SVG, no background box */
-.btn-icon {
+.share-links-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none;
-    border-radius: 0;
-    padding: 0;
-    width: auto;
-    height: auto;
+    gap: 10px;
 }
-
-.btn-icon svg {
-    width: 22px;
-    height: 22px;
+.hover-links {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #1a7a5e;
+    display: none;
+}
+.hover-links a {
+    font-family: 'Arima', cursive;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1a7a5e;
+    text-decoration-line: underline;
+}
+.hover-links a:active {
+    font-weight: 700;
+}
+.share-link-container {
+    background-color: #1a7a5e;
+    border-radius: 30px;
+    padding: 10px 24px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.share-link-container a {
+    font-family: 'Arima', cursive;
+    font-size: 24px;
+    font-weight: bold;
+    color: #F1C953;
+    cursor: pointer;
+    text-decoration: none;
+}
+.hover-share-icon-two {
+    width: 24px;
+    height: 27px;
+    display: none;
+}
+.share-links-wrapper:hover .hover-share-icon-one {
+    display: none;
+}
+.share-links-wrapper:hover .hover-links,
+.share-links-wrapper:hover .hover-share-icon-two {
+    display: flex;
+}
+.share > p {
+    position: relative;
+}
+.share-pfeil-icon {
+    position: absolute;
+    left: -45px;
+    bottom: -75px;
 }
 
 /* Footer */
@@ -585,6 +584,24 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 
 .social:hover {
     transform: translateY(-2px);
+}
+
+/* Carousel controls */
+.carousel-dots {
+    display: none;
+}
+.carousel-radio {
+    display: none;
+}
+
+/* Mobile bottom nav */
+.footer-nav {
+    display: none;
+}
+
+/* Share toggle checkbox (always hidden) */
+.share-toggle {
+    display: none;
 }
 
 /* =============================================
@@ -661,17 +678,16 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     .tips-badge {
         font-size: 22px;
     }
-    .cta-share p {
+    .share {
+        width: 100%;
+        height: auto;
+        gap: 32px;
+    }
+    .share p {
         font-size: 20px;
     }
-    .btn-share {
+    .share-link-container a {
         font-size: 20px;
-        height: 44px;
-    }
-    .cta-arrow {
-        width: 120px;
-        height: 105px;
-        margin-top: -12px;
     }
     .footer {
         flex-direction: column;
@@ -694,47 +710,281 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 @media (max-width: 520px) {
+    /* Header: logo only, centered */
+    .haupt-header {
+        justify-content: center;
+        padding: 16px;
+        gap: 0;
+    }
+    .haupt-header nav {
+        display: none;
+    }
+    .haupt-header img {
+        height: 48px;
+        width: 48px;
+    }
+
+    /* Article header stacked */
+    .article-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .article-intro {
+        align-items: center;
+        text-align: center;
+    }
+    .title-group {
+        align-items: center;
+    }
     .article-intro h1 {
-        font-size: 36px;
+        font-size: 40px;
     }
     .tagline {
         font-size: 24px;
     }
     .subtitle {
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 16px;
     }
     .actions {
-        gap: 16px;
+        justify-content: center;
+        gap: 12px;
+    }
+    .action {
+        font-size: 14px;
+    }
+
+    /* Author card */
+    .author-box {
+        width: 100%;
+        max-width: 320px;
+        align-self: center;
+    }
+
+    /* Carousel: 1 card with peek */
+    .carousel-wrap h2 {
+        font-size: 20px;
     }
     .carousel {
-        height: 240px;
+        height: 360px;
+        overflow: hidden;
     }
     .slide {
-        width: 120px;
-        height: 185px;
+        width: 78%;
+        height: 100%;
+        transform: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-left: 0;
+        opacity: 0.4;
+        pointer-events: none;
+        transition: left 400ms ease, opacity 400ms ease;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        border-radius: 16px;
     }
+    .slide img {
+        border-radius: 16px;
+    }
+    .slide:hover {
+        transform: none;
+    }
+    .slide:hover ~ .slide {
+        transform: none;
+    }
+
+    /* Slide positions based on checked radio */
+    #c1:checked ~ .carousel .slide:nth-child(1) { left: 5%; opacity: 1; pointer-events: auto; z-index: 2; }
+    #c1:checked ~ .carousel .slide:nth-child(2) { left: 87%; opacity: 0.5; z-index: 1; }
+    #c1:checked ~ .carousel .slide:nth-child(3),
+    #c1:checked ~ .carousel .slide:nth-child(4),
+    #c1:checked ~ .carousel .slide:nth-child(5) { left: 100%; opacity: 0; }
+
+    #c2:checked ~ .carousel .slide:nth-child(1) { left: -73%; opacity: 0; }
+    #c2:checked ~ .carousel .slide:nth-child(2) { left: 5%; opacity: 1; pointer-events: auto; z-index: 2; }
+    #c2:checked ~ .carousel .slide:nth-child(3) { left: 87%; opacity: 0.5; z-index: 1; }
+    #c2:checked ~ .carousel .slide:nth-child(4),
+    #c2:checked ~ .carousel .slide:nth-child(5) { left: 100%; opacity: 0; }
+
+    #c3:checked ~ .carousel .slide:nth-child(1),
+    #c3:checked ~ .carousel .slide:nth-child(2) { left: -73%; opacity: 0; }
+    #c3:checked ~ .carousel .slide:nth-child(3) { left: 5%; opacity: 1; pointer-events: auto; z-index: 2; }
+    #c3:checked ~ .carousel .slide:nth-child(4) { left: 87%; opacity: 0.5; z-index: 1; }
+    #c3:checked ~ .carousel .slide:nth-child(5) { left: 100%; opacity: 0; }
+
+    #c4:checked ~ .carousel .slide:nth-child(1),
+    #c4:checked ~ .carousel .slide:nth-child(2),
+    #c4:checked ~ .carousel .slide:nth-child(3) { left: -73%; opacity: 0; }
+    #c4:checked ~ .carousel .slide:nth-child(4) { left: 5%; opacity: 1; pointer-events: auto; z-index: 2; }
+    #c4:checked ~ .carousel .slide:nth-child(5) { left: 87%; opacity: 0.5; z-index: 1; }
+
+    #c5:checked ~ .carousel .slide:nth-child(1),
+    #c5:checked ~ .carousel .slide:nth-child(2),
+    #c5:checked ~ .carousel .slide:nth-child(3) { left: -73%; opacity: 0; }
+    #c5:checked ~ .carousel .slide:nth-child(5) { left: 20%; opacity: 1; pointer-events: auto; z-index: 2; }
+    #c5:checked ~ .carousel .slide:nth-child(4) { left: -60%; opacity: 0.5; z-index: 1; }
+
+    /* Dot pagination */
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 16px;
+    }
+    .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #d0e8e0;
+        cursor: pointer;
+        transition: all 250ms ease;
+    }
+    #c1:checked ~ .carousel-dots .dot:nth-child(1),
+    #c2:checked ~ .carousel-dots .dot:nth-child(2),
+    #c3:checked ~ .carousel-dots .dot:nth-child(3),
+    #c4:checked ~ .carousel-dots .dot:nth-child(4),
+    #c5:checked ~ .carousel-dots .dot:nth-child(5) {
+        width: 36px;
+        border-radius: 999px;
+        background: #4EA487;
+    }
+
+    /* Body text 16px */
     .article-text {
-        font-size: 18px;
+        font-size: 16px;
+        gap: 32px;
     }
     .pro-tips ol {
-        font-size: 18px;
+        font-size: 16px;
     }
     .tips-badge {
         font-size: 18px;
         padding: 8px 14px;
         top: -18px;
     }
-    .cta-share p {
+
+    /* Share — links always visible on mobile */
+    .share {
+        width: 100%;
+        height: auto;
+        gap: 24px;
+    }
+    .share p {
         font-size: 18px;
     }
-    .btn-share {
+    .share-link-container a {
         font-size: 18px;
-        height: 40px;
-        padding: 0 20px;
     }
-    .cta-arrow {
-        width: 100px;
-        height: 88px;
-        margin-top: -10px;
+    .share-pfeil-icon {
+        display: block;
+        width: 60px;
+        height: auto;
+        left: -30px;
+        bottom: -50px;
+    }
+
+    /* Default mobile share state */
+    .hover-links {
+        display: none;
+    }
+    .hover-share-icon-two {
+        display: none;
+    }
+
+    /* Share button label styled as button */
+    .share-btn-label {
+        font-family: 'Arima', cursive;
+        font-size: 20px;
+        font-weight: bold;
+        color: #F1C953;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+    }
+
+    /* Checked state: button shrinks and shifts left, links appear */
+    .share-toggle:checked ~ .share-link-container {
+        transform: translateX(-12px) scale(0.92);
+        transition: transform 250ms ease;
+    }
+    .share-toggle:checked ~ .hover-links {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        animation: fadeIn 200ms ease forwards;
+    }
+    .share-toggle:checked ~ .hover-share-icon-two {
+        display: block;
+        width: 24px;
+        height: 27px;
+    }
+    .share-toggle:checked ~ .share-link-container .hover-share-icon-one {
+        display: none;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateX(8px); }
+        to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Footer: two columns — text left, icons right */
+    .footer {
+        padding: 20px 16px;
+        min-height: auto;
+        margin-top: 0;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+        gap: 0;
+        order: 1;
+    }
+    .footer-links {
+        grid-column: 1;
+        grid-row: 1 / 3;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+    }
+    .footer-links a {
+        font-size: 14px;
+    }
+    .footer-left {
+        grid-column: 1;
+        grid-row: 3;
+        margin-top: 4px;
+    }
+    .footer-copy {
+        font-size: 14px;
+    }
+    .socials {
+        grid-column: 2;
+        grid-row: 2 / 4;
+        gap: 10px;
+        margin-left: 16px;
+        align-self: center;
+    }
+    .social svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Yellow icon nav bar — at the very bottom (not sticky) */
+    .footer-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: #F1C953;
+        padding: 12px 16px;
+        order: 2;
+    }
+    .footer-nav-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
     }
 }
