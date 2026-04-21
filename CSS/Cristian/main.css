@@ -192,6 +192,31 @@ figure + p, .highlights{
 .share p{
     text-align: center;
 }
+.share-links-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.hover-links{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    color: var(--dark-green);
+    display: none;
+}
+.hover-links a{
+    font-family: 'Arima';
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--dark-green);
+
+    text-decoration-line: underline;
+}
+.hover-links a:active{
+    font-weight: 700;
+}
 .share-link-container{
     background-color: var(--dark-green);
     border-radius: 30px;
@@ -208,6 +233,19 @@ figure + p, .highlights{
     color: var(--yellow);
 
     cursor: pointer;
+}
+.hover-share-icon-two{
+    width: 24px;
+    height: 27px;
+    display: none;
+}
+
+.share-links-wrapper:hover .hover-share-icon-one{
+    display: none;
+}
+.share-links-wrapper:hover .hover-links,
+.share-links-wrapper:hover .hover-share-icon-two{
+    display: flex;
 }
 .share > p{
     position: relative;

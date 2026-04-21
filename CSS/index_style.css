@@ -6,12 +6,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Palanquin', Arial, Helvetica, sans-serif;
     background: #fff;
     color: #3D3D3D;
     line-height: 1.2;
+    scroll-behavior: smooth;
 }
 
 .page-wrapper {
@@ -314,6 +318,12 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     align-items: center;
     gap: 25px;
 }
+input{
+    margin-bottom: 45px;
+    margin-left: 25px;
+    width: 30px;
+    height: 30px;
+}
 .highlight-showcase{
     
     width: 1200px;
@@ -326,6 +336,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     position: relative;
 
     overflow: hidden;
+
+    cursor: pointer;
 }
 .highlight-showcase input{
     z-index: 2;
@@ -333,7 +345,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 .slider-wrapper{
     z-index: 1;
 
-    width: 400%;
+    width: 300%;
     height: 100%;
 
     position: absolute;
@@ -343,26 +355,24 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 .slide{
     height: 100%;
-    width: calc(100% / 4);
+    width: calc(100% / 3);
+    text-decoration-line: none;
 }
 .s-one{
-    background-image: url(../Assets/Cristian/Images/highlights-bg.png); 
-}
-.s-two{
     background-image: url("../../Assets/Lucas/slider_2.JPG");
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 100px;
 }
-.s-three{
+.s-two{
     background-image: url(../Assets/Cristian/Images/copenhagen.jpeg);
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 100px;
 }
-.s-four{
+.s-three{
     background-image: url(../Assets/Cristian/Images/pattaya-beach.jpg);
     background-color: white;
     background-repeat: no-repeat;
@@ -371,22 +381,28 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 .highlight-showcase input[value="one"]:checked~.slider-wrapper{
-    transform: translateX(1800px);
+    transform: translateX(calc(100% / 3));
 }
 .highlight-showcase input[value="two"]:checked~.slider-wrapper{
-    transform: translateX(600px);
+    transform: translateX(0);
 }
 .highlight-showcase input[value="three"]:checked~.slider-wrapper{
-    transform: translateX(-600px);
+    transform: translateX(calc(-100% / 3));
 }
-.highlight-showcase input[value="four"]:checked~.slider-wrapper{
-    transform: translateX(-1800px);
+input[type="radio"]:checked{
+    accent-color: rgba(241, 201, 83, 1);
 }
 .slide-text{
     padding: 15px 25px;
     width: 880px;
     height: 230px; 
     margin: 70px 0px 45px 40px;
+    width: 880px;
+    height: 230px;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.2);
+    border-right: rgba(255, 255, 255, 0.6) solid 1px;
+    border-left: rgba(255, 255, 255, 0.6) solid 1px;
 } 
 .slide h3 {
     font-family: 'Palanquin';
@@ -401,9 +417,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     font-weight: 400;
     font-size: 28px;
 }
-.dot{
-    font-size: 100px;
-}
+
 /* =============================================
    Contact Formular (Sebastian)
    ============================================= */
