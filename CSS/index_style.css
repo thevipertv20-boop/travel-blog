@@ -314,6 +314,16 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     align-items: center;
     gap: 25px;
 }
+input{
+    margin-bottom: 45px;
+    margin-left: 25px;
+    width: 30px;
+    height: 30px;
+}
+/* input:checked{
+    accent-color: rgba(241, 201, 83, 1);
+    width: 40px;
+} */
 .highlight-showcase{
     
     width: 1200px;
@@ -326,6 +336,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     position: relative;
 
     overflow: hidden;
+
+    cursor: pointer;
 }
 .highlight-showcase input{
     z-index: 2;
@@ -401,9 +413,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     font-weight: 400;
     font-size: 28px;
 }
-.dot{
-    font-size: 100px;
-}
+
 /* =============================================
    Contact Formular (Sebastian)
    ============================================= */
