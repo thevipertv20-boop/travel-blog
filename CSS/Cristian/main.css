@@ -211,9 +211,11 @@ figure + p, .highlights{
     font-weight: 600;
     font-size: 18px;
     color: var(--dark-green);
+
+    text-decoration-line: underline;
 }
 .hover-links a:active{
-    text-decoration-line: underline;
+    font-weight: 700;
 }
 .share-link-container{
     background-color: var(--dark-green);
