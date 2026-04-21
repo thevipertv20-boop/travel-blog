@@ -47,7 +47,9 @@
                         </div>
                     </div>
                     <svg class="swoosh" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M44.9,0 C44.6,0.5 40.8,3.5 39.4,5.5 C35.0,11.8 30.8,19.7 31.5,31.2 C32.8,50.2 34.1,58.1 32.6,72.6 C31.3,84.1 24.6,96.0 19.6,98.7 L100,100 L100,0 Z" fill="#c0392b"/>
+                        <path
+                            d="M44.9,0 C44.6,0.5 40.8,3.5 39.4,5.5 C35.0,11.8 30.8,19.7 31.5,31.2 C32.8,50.2 34.1,58.1 32.6,72.6 C31.3,84.1 24.6,96.0 19.6,98.7 L100,100 L100,0 Z"
+                            fill="#c0392b" />
                     </svg>
                     <div class="badge">
                         <svg class="badge-ring" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -78,38 +80,35 @@
                     </p>
                 </div>
                 <div class="highlight-showcase">
-                    
-                        <input class="dot active" type="radio" name="slider" value="one" checked></input>
-                        <input class="dot" type="radio" name="slider" value="two"></input>
-                        <input class="dot" type="radio" name="slider" value="three"></input>
-                        <input class="dot" type="radio" name="slider" value="four"></input>
 
-                        <div class="slider-wrapper">
-                            <div class="slide s-one">
-                                <div class="slide-text">
-                                    <h3>The World's Most Breathtaking Beaches</h3>
-                                    <p>From powder-soft white sands to dramatic coastlines kissed by turquoise waves, these beaches are more than destinations — they're feelings.</p>
-                                </div>
+                    <input class="dot" type="radio" name="slider" value="one" checked></input>
+                    <input class="dot" type="radio" name="slider" value="two"></input>
+                    <input class="dot" type="radio" name="slider" value="three"></input>
+
+                    <div class="slider-wrapper">
+
+                        <a href="../HTML/Lucas/lucas.html" class="slide s-one">
+                            <div class="slide-text">
+                                <h3>Tokio: Die faszinierendste Stadt der Welt</h3>
+                                <p>Wo Tradition auf Zukunft trifft</p>
                             </div>
-                            <div class="slide s-two">
-                                <div class="slide-text">
-                                    <h3>Tokio: Die faszinierendste Stadt der Welt</h3>
-                                    <p>Wo Tradition auf Zukunft trifft</p>
-                                </div>
+                        </a>
+
+                        <a href="../HTML/Cristian/index.html" class="slide s-two">
+                            <div class="slide-text">
+                                <h3>Kopenhagen in 3 Tagen: Große Erlebnisse, clever sparen</h3>
+                                <p>Ein stilvoller skandinavischer Kurztrip</p>
                             </div>
-                            <div class="slide s-three">
-                                <div class="slide-text">
-                                    <h3>Copenhagen in 3 Days: Big Experiences, Smart Spending</h3>
-                                    <p>A Stylish Scandinavian Escape</p>
-                                </div>
+                        </a>
+
+                        <a href="../HTML/Sebastian/index.html" class="slide s-three">
+                            <div class="slide-text">
+                                <h3>Pattaya Puls:Essen, Sonne und Neon-Nächte</h3>
+                                <p>Thailands Stadt, die niemals schläft</p>
                             </div>
-                            <div class="slide s-four">
-                                <div class="slide-text">
-                                    <h3>The World's Most Breathtaking Beaches</h3>
-                                    <p>Pattaya Pulse: Food, Sun and Neon Nights</p>
-                                </div>
-                            </div>
-                        </div>
+                        </a>
+
+                    </div>
                 </div>
             </section>
 
@@ -161,14 +160,17 @@
                     Get in touch—I'd love to hear from you and explore how we can work together.
                 </p>
                 <form class="contact-form">
-                    <div class="container"><div class="form-row">
-                        <input type="text" placeholder="What's your name?" required>
-                        <input type="email" placeholder="What's your email?" required></div>
+                    <div class="container">
+                        <div class="form-row">
+                            <input type="text" placeholder="What's your name?" required>
+                            <input type="email" placeholder="What's your email?" required>
+                        </div>
                     </div>
                     <input type="text" class="form-full" placeholder="How can I help?" required>
                     <label class="form-checkbox">
                         <input type="checkbox" required>
-                        <span>I've read the <a class="privacy" href="#">privacy policy</a> and agree to the processing of my data as outlined.</span>
+                        <span>I've read the <a class="privacy" href="#">privacy policy</a> and agree to the processing
+                            of my data as outlined.</span>
                     </label>
                     <button type="submit" class="btn-send">Send</button>
                 </form>
@@ -184,7 +186,7 @@
                 <a href="#">Cookie Preferences</a>
             </div>
             <div class="socials">
-                <a href="#" class="social" aria-label="TikTok">
+                <a href="https://www.tiktok.com/" class="social" aria-label="TikTok">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <rect width="32" height="32" rx="4" fill="#F1C953" />
                         <path d="M18 8v10.5a3.5 3.5 0 1 1-3.5-3.5" stroke="#4EA487" stroke-width="2.5"
@@ -192,13 +194,13 @@
                         <path d="M18 8l5-2v3l-5 2" fill="#4EA487" />
                     </svg>
                 </a>
-                <a href="#" class="social" aria-label="YouTube">
+                <a href="https://www.youtube.com/" class="social" aria-label="YouTube">
                     <svg width="44" height="32" viewBox="0 0 44 32" fill="none">
                         <rect width="44" height="32" rx="8" fill="#F1C953" />
                         <path d="M18 10l10 6-10 6V10z" fill="#4EA487" />
                     </svg>
                 </a>
-                <a href="#" class="social" aria-label="Facebook">
+                <a href="https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2F%3Flocale%3Dde_DE" class="social" aria-label="Facebook">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <circle cx="16" cy="16" r="16" fill="#F1C953" />
                         <path
@@ -206,7 +208,7 @@
                             fill="#4EA487" />
                     </svg>
                 </a>
-                <a href="#" class="social" aria-label="Instagram">
+                <a href="https://www.instagram.com/" class="social" aria-label="Instagram">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                         <rect width="32" height="32" rx="4" fill="url(#ig-grad)" />
                         <rect x="6" y="6" width="20" height="20" rx="6" stroke="#4EA487" stroke-width="2" fill="none" />

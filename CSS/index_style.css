@@ -6,12 +6,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Palanquin', Arial, Helvetica, sans-serif;
     background: #fff;
     color: #3D3D3D;
     line-height: 1.2;
+    scroll-behavior: smooth;
 }
 
 .page-wrapper {
@@ -345,7 +349,7 @@ input{
 .slider-wrapper{
     z-index: 1;
 
-    width: 400%;
+    width: 300%;
     height: 100%;
 
     position: absolute;
@@ -355,26 +359,24 @@ input{
 }
 .slide{
     height: 100%;
-    width: calc(100% / 4);
+    width: calc(100% / 3);
+    text-decoration-line: none;
 }
 .s-one{
-    background-image: url(../Assets/Cristian/Images/highlights-bg.png); 
-}
-.s-two{
     background-image: url("../../Assets/Lucas/slider_2.JPG");
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 100px;
 }
-.s-three{
+.s-two{
     background-image: url(../Assets/Cristian/Images/copenhagen.jpeg);
     background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
     border-top-right-radius: 100px;
 }
-.s-four{
+.s-three{
     background-image: url(../Assets/Cristian/Images/pattaya-beach.jpg);
     background-color: white;
     background-repeat: no-repeat;
@@ -383,16 +385,16 @@ input{
 }
 
 .highlight-showcase input[value="one"]:checked~.slider-wrapper{
-    transform: translateX(1800px);
+    transform: translateX(calc(100% / 3));
 }
 .highlight-showcase input[value="two"]:checked~.slider-wrapper{
-    transform: translateX(600px);
+    transform: translateX(0);
 }
 .highlight-showcase input[value="three"]:checked~.slider-wrapper{
-    transform: translateX(-600px);
+    transform: translateX(calc(-100% / 3));
 }
-.highlight-showcase input[value="four"]:checked~.slider-wrapper{
-    transform: translateX(-1800px);
+input[type="radio"]:checked{
+    accent-color: rgba(241, 201, 83, 1);
 }
 .slide-text{
     padding: 15px 25px;
