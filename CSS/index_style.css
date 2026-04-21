@@ -131,7 +131,12 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 
 /* =============================================
-   HERO / CARD (Lucas)
+   HERO CARD — reveal animation
+   
+   1) Alles startet gelb, Text taucht von unten auf
+   2) Roter Swoosh schiebt sich von rechts rein,
+      Text rückt dabei nach links
+   3) Badge ploppt an der Kurve auf
    ============================================= */
 .hero {
     background: #fff;
@@ -140,26 +145,30 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     align-items: stretch;
     justify-content: stretch;
     padding: 0;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Karte faden sich kurz ein, damit nichts flickert */
 .card {
     width: 100%;
     height: 100%;
     background: #F5C842;
     border-radius: 0;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: stretch;
     opacity: 0;
-    transform: scale(1);
-    animation: cardIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    animation: cardFadeIn 0.4s ease 0.1s forwards;
 }
 
-@keyframes cardIn {
-    to { opacity: 1; transform: scale(1); }
+@keyframes cardFadeIn {
+    to { opacity: 1; }
 }
 
+/* Text startet mittig über der gelben Fläche und rückt 
+   beim Swoosh-Reinslide nach links in seine finale Position */
 .text-side {
     flex: 0 0 45%;
     padding: 72px 60px;
@@ -167,8 +176,15 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+    transform: translateX(55%);
+    animation: textShiftLeft 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.5s forwards;
 }
 
+@keyframes textShiftLeft {
+    to { transform: translateX(0); }
+}
+
+/* Title & Subtitle steigen elegant von unten hoch */
 .title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 48px;
@@ -176,8 +192,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     color: #2C1A0E;
     line-height: 1.1;
     opacity: 0;
-    transform: translateX(-22px);
-    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.0s forwards;
+    transform: translateY(28px);
+    animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
 }
 
 .subtitle {
@@ -188,50 +204,47 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     line-height: 1.6;
     margin-top: 10px;
     opacity: 0;
-    transform: translateX(-18px);
-    animation: slideInLeft 0.6s cubic-bezier(0.22, 1, 0.36, 1) 1.25s forwards;
+    transform: translateY(20px);
+    animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
 }
 
-@keyframes slideInLeft {
-    to { opacity: 1; transform: translateX(0); }
+@keyframes riseIn {
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.image-side {
+/* Roter Swoosh-Bereich startet komplett außerhalb rechts 
+   und schiebt sich nach 1,4s langsam ins Bild */
+.swoosh {
     position: absolute;
-    right: 0;
-    top: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: 1;
-    clip-path: url(#swoosh);
+    transform: translateX(100%);
+    animation: swooshSlide 1.5s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
 }
 
-.image-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #c0392b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.3);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+@keyframes swooshSlide {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
 }
 
+/* Badge sitzt auf der Kurvenspitze und ploppt 
+   gegen Ende der Animation auf */
 .badge {
     position: absolute;
-    bottom: 50px;
-    left: calc(52% - 40px);
-    width: 80px;
-    height: 80px;
+    width: 160px;
+    height: 160px;
     z-index: 10;
+    left: 28%;
+    top: 51%;
     opacity: 0;
-    animation: badgeIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.6s forwards;
+    transform: translateY(160px);
+    animation: badgeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
 }
 
-@keyframes badgeIn {
-    to { opacity: 1; }
+@keyframes badgeSlideUp {
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .badge-ring {
@@ -248,16 +261,149 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 
 .badge-center {
     position: absolute;
-    inset: 8px;
+    inset: 18px;
     background: #1a7a5e;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 32px;
     line-height: 1;
 }
 
+/* =============================================
+   Highlights Section (Cristian)
+   ============================================= */
+
+.highlights {
+    max-width: 1200px;
+    margin: 80px auto;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
+}
+
+.highlights-title h2{
+    font-family: 'Arima';
+    color: rgba(78, 164, 135, 1);
+    font-weight: 700;
+    font-size: 52px;
+}
+.highlights-title{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.highlights-subtitle {
+    font-family: 'Palanquin';
+    color: rgba(84, 55, 13, 1);
+    font-weight: 500;
+    font-size: 24px;
+
+    text-align: center;
+}
+.highlights-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.highlight-showcase{
+    
+    width: 1200px;
+    height: 533px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    position: relative;
+
+    overflow: hidden;
+}
+.highlight-showcase input{
+    z-index: 2;
+}
+.slider-wrapper{
+    z-index: 1;
+
+    width: 400%;
+    height: 100%;
+
+    position: absolute;
+    display: flex;
+
+    transition: all 1s ease-in-out;
+}
+.slide{
+    height: 100%;
+    width: calc(100% / 4);
+}
+.s-one{
+    background-image: url(../Assets/Cristian/Images/highlights-bg.png); 
+}
+.s-two{
+    background-image: url("../../Assets/Lucas/slider_2.JPG");
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+.s-three{
+    background-image: url(../Assets/Cristian/Images/copenhagen.jpeg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+.s-four{
+    background-image: url(../Assets/Cristian/Images/pattaya-beach.jpg);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-right-radius: 100px;
+}
+
+.highlight-showcase input[value="one"]:checked~.slider-wrapper{
+    transform: translateX(1800px);
+}
+.highlight-showcase input[value="two"]:checked~.slider-wrapper{
+    transform: translateX(600px);
+}
+.highlight-showcase input[value="three"]:checked~.slider-wrapper{
+    transform: translateX(-600px);
+}
+.highlight-showcase input[value="four"]:checked~.slider-wrapper{
+    transform: translateX(-1800px);
+}
+.slide-text{
+    padding: 15px 25px;
+    width: 880px;
+    height: 230px; 
+    margin: 70px 0px 45px 40px;
+} 
+.slide h3 {
+    font-family: 'Palanquin';
+    color: white;
+    font-weight: 600;
+    font-size: 48px;
+}
+
+.slide p {
+    font-family: 'Palanquin';
+    color: white;
+    font-weight: 400;
+    font-size: 28px;
+}
+.dot{
+    font-size: 100px;
+}
 /* =============================================
    Contact Formular (Sebastian)
    ============================================= */
@@ -512,12 +658,14 @@ input[type="email"]{
         padding: 30px 60px;
         gap: 60px;
     }
+
     .highlights,
     .faq,
     .contact {
         padding-left: 60px;
         padding-right: 60px;
     }
+
     .footer {
         padding: 40px 60px;
     }
@@ -528,48 +676,60 @@ input[type="email"]{
         padding: 20px 24px;
         gap: 32px;
     }
+
     .haupt-header img {
         height: 56px;
         width: 56px;
     }
+
     .haupt-header nav ul {
         gap: 32px;
     }
+
     .haupt-header nav a {
         font-size: 20px;
     }
+
     .hero {
         height: 530px;
         padding: 0;
     }
+
     .card {
         width: 100%;
         max-width: none;
     }
+
     .highlights,
     .faq,
     .contact {
         padding-left: 24px;
         padding-right: 24px;
     }
+
     .highlight-showcase {
         height: 320px;
         border-radius: 0 40px 0 0;
     }
+
     .showcase-text h3 {
         font-size: 22px;
     }
+
     .footer {
         flex-direction: column;
         gap: 24px;
         padding: 32px 24px;
     }
+
     .socials {
         margin-left: 0;
     }
+
     .footer-links {
         gap: 32px;
     }
+
     .form-row {
         flex-direction: column;
     }
@@ -580,49 +740,59 @@ input[type="email"]{
         height: 530px;
         padding: 0;
     }
+
     .card {
         width: 100%;
         max-width: none;
         height: 100%;
         flex-direction: column;
     }
+
     .text-side {
         flex: 0 0 auto;
         padding: 24px;
     }
-    .image-side {
-        flex: 1;
-        height: auto;
-    }
+
     .text-side {
         flex: none;
         padding: 24px;
     }
-    .image-side {
-        height: 160px;
-    }
+
     .badge {
-        left: calc(50% - 28px);
+        left: 50%;
+        top: auto;
         bottom: 10px;
+        transform: translateX(-50%) translateY(160px);
+        animation: badgeSlideUpMobile 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
     }
+
+    @keyframes badgeSlideUpMobile {
+        to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
     .section-title {
         font-size: 24px;
     }
+
     .highlight-showcase {
         height: 260px;
         padding: 24px;
     }
+
     .showcase-text {
         left: 24px;
         top: 24px;
     }
+
     .showcase-text h3 {
         font-size: 18px;
     }
+
     .faq-item summary {
         font-size: 14px;
         padding: 14px 18px;
     }
+
     .faq-content {
         padding: 0 18px 14px;
     }
