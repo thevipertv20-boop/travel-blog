@@ -38,9 +38,10 @@ body {
     display: flex;
     align-items: center;
     gap: 100px;
-    padding: 30px 145px;
+    padding: 30px clamp(16px, 5vw, 145px);
     position: relative;
     z-index: 10;
+    flex-wrap: wrap;
 }
 
 .haupt-header img {
@@ -56,6 +57,7 @@ body {
     padding-inline-start: 0;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .haupt-header nav a {
@@ -132,8 +134,9 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 80px;
+    gap: 30px;
     min-height: 152px;
+    flex-wrap: wrap; 
 }
 
 .footer-left {
@@ -342,7 +345,7 @@ main {
     display: flex;
     gap: 40px;
     justify-content: center;
-    align-items: stretch; /* 🔥 gleiche Höhe */
+    align-items: stretch; 
     margin-bottom: 60px;
 }
 
@@ -384,12 +387,12 @@ main {
         0 15px 30px rgba(0,0,0,0.1),
         inset 0 2px 4px rgba(255,255,255,0.6);
 
-    margin-top: auto; /* 🔥 DAS ist der Trick */
+    margin-top: auto; 
 }
 
 /* Bild */
 .image-card img {
-    width: 100%;      /* 🔥 NICHT fix */
+    width: 100%;      
     height: auto;
     display: block;
     border-radius: 25px;
@@ -453,7 +456,7 @@ figure + p, .highlights{
 .tipps{
     margin: 0px 35px 90px 85px;
     padding: 20px 16px;
-    background-color: var(--light-green);
+    background-color: var(--light-green #dff2ec);
     border-radius: 30px;
     position: relative;
 }
@@ -480,7 +483,7 @@ figure + p, .highlights{
 
     gap: 25px;          
     width: 490px;
-    height: auto;
+    width: 100%;
 
     margin: -40px auto 60px; 
 }
@@ -549,4 +552,115 @@ figure + p, .highlights{
     position: absolute;
     left: -45px;
     bottom: -75px;
+}
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+    main {
+        margin: 40px 20px;
+    }
+
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-article h1 {
+        font-size: 36px;
+    }
+
+    .intro-article h2 {
+        font-size: 24px;
+    }
+
+    .intro-article p {
+        font-size: 18px;
+    }
+
+    .about-me {
+        width: 100%;
+    }
+
+    .cards-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .diagramm {
+        width: 100%;
+    }
+
+    .share {
+        width: 100%;
+        margin: 0 auto 40px;
+    }
+
+    article p {
+        font-size: 18px;
+    }
+
+    .footer {
+    padding: 30px 20px; 
+  }
+}
+
+
+/* ===================== */
+/* 💻 TABLET */
+/* ===================== */
+@media (max-width: 1024px) {
+
+    .intro-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .diagramm {
+        width: 90%;
+    }
+
+    .share {
+        width: 90%;
+    }
+}
+
+/* ===================== */
+/* 🖥️ LARGE SCREENS */
+/* ===================== */
+@media (min-width: 1440px) {
+
+    main {
+        max-width: 1300px;
+    }
+
+    .card {
+        width: 600px;
+    }
+
+    .diagramm {
+        width: 700px;
+    }
+
+    .intro-article h1 {
+        font-size: 72px;
+    }
+
+    .intro-article h2 {
+        font-size: 44px;
+    }
 }
