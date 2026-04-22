@@ -482,8 +482,13 @@ input[type="radio"]:checked {
 }
 
 .section-title {
-    text-align: center;
+    
     margin-bottom: 40px;
+    display:flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    
 }
 
 .section-title h2 {
@@ -561,7 +566,7 @@ summary::-webkit-details-marker {
     color: rgba(78, 164, 135, 1);
     line-height: 120%;
     margin: 0;
-    width: 100%;
+    
 }
 
 .section-subtitle {
