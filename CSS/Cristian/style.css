@@ -7,3 +7,4 @@ wird in den HTML-Datei per <link> eingebunden */
 @import "./header.css";
 @import "./main.css";
 @import "./footer.css";
+@import "./responsive.css";
