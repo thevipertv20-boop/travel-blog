@@ -828,23 +828,6 @@ input[type="email"] {
         font-size: 22px;
     }
 
-    .footer {
-        flex-direction: column;
-        gap: 24px;
-        padding: 32px 24px;
-    }
-
-    .socials {
-        margin-left: 0;
-    }
-
-    .footer-links {
-        gap: 32px;
-    }
-
-    .form-row {
-        flex-direction: column;
-    }
 }
 
 @media (max-width: 520px) {

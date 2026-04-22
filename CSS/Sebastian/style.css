@@ -563,11 +563,6 @@ figure + p, .highlights{
         margin: 40px 20px;
     }
 
-    .intro-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
     .intro-article h1 {
         font-size: 36px;
     }
@@ -580,23 +575,6 @@ figure + p, .highlights{
         font-size: 18px;
     }
 
-    .about-me {
-        width: 100%;
-    }
-
-    .cards-wrapper {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    .diagramm {
-        width: 100%;
-    }
-
     .share {
         width: 100%;
         margin: 0 auto 40px;
@@ -606,9 +584,6 @@ figure + p, .highlights{
         font-size: 18px;
     }
 
-    .footer {
-    padding: 30px 20px; 
-  }
 }
 
 
@@ -616,11 +591,6 @@ figure + p, .highlights{
 /* 💻 TABLET */
 /* ===================== */
 @media (max-width: 1024px) {
-
-    .intro-container {
-        flex-direction: column;
-        align-items: center;
-    }
 
     .cards-wrapper {
         flex-direction: column;
