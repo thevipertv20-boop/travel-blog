@@ -343,6 +343,7 @@ main {
     gap: 40px;
     justify-content: center;
     align-items: stretch; /* 🔥 gleiche Höhe */
+    margin-bottom: 60px;
 }
 
 /* Card */
@@ -471,14 +472,17 @@ figure + p, .highlights{
     transform: rotate(-20deg);
 }
 
-.share{
+.share {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+
+    gap: 25px;          
     width: 490px;
-    height: 150px;
+    height: auto;
+
+    margin: -40px auto 60px; 
 }
 .share p{
     text-align: center;
