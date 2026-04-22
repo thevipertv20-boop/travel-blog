@@ -170,11 +170,20 @@
                 <form class="contact-form">
                     <div class="container">
                         <div class="form-row">
-                            <input type="text" placeholder="What's your name?" required>
-                            <input type="email" placeholder="What's your email?" required>
+                            <div class="form-field">
+                                <label class="field-label">Wie heißt du?</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-field">
+                                <label class="field-label">Wie lautet deine E-Mail?</label>
+                                <input type="email" required>
+                            </div>
                         </div>
                     </div>
-                    <input type="text" class="form-full" placeholder="How can I help?" required>
+                    <div class="form-field form-field-full">
+                        <label class="field-label">Was ist dein Anliegen?</label>
+                        <input type="text" class="form-full" required>
+                    </div>
                     <label class="form-checkbox">
                         <input type="checkbox" required>
                         <span>I've read the <a class="privacy" href="#">privacy policy</a> and agree to the processing

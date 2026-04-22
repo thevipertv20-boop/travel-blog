@@ -537,6 +537,16 @@ summary::-webkit-details-marker {
     display: none;
 }
 
+.faq-item[open] {
+    padding-bottom: 12px;
+}
+
+.faq-content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
 .faq-item:hover {
     background: #ddb84f;
 }
@@ -566,47 +576,75 @@ summary::-webkit-details-marker {
 }
 
 .form-full {
-
     width: 100% !important;
     max-width: 1096px !important;
-    margin-left: 80px !important;
+    margin-left: 0 !important;
     border: none !important;
-    border-bottom: solid 2px !important;
-    font-family: 'palanquin', cursive !important;
-    font-weight: 600 !important;
+    border-bottom: 2px solid #d0d0d0 !important;
+    color: #4EA487 !important;
+    font-family: 'Palanquin', sans-serif !important;
+    font-size: 20px !important;
+    height: 56px !important;
+    background: transparent !important;
 }
 
-input:focus {
-    border-bottom: 1.5px solid rgba(84, 55, 13, 1);
+input:focus,
+input:focus-visible,
+input:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 2px solid #4EA487;
 }
 
 input[type="text"] {
-    height: 94px;
-    width: 527px;
-
+    height: 56px;
+    width: 100%;
     border: none;
-    border-bottom: solid 2px;
-
-
+    border-bottom: 2px solid #d0d0d0;
+    color: #4EA487;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 20px;
+    background: transparent;
 }
 
-input::placeholder {
-    font-family: 'palanquin', cursive;
-    font-weight: 500;
-    font-size: 24px;
-    color: rgba(84, 55, 13, 1);
+.field-label {
+    display: block;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #54370D;
+    margin-bottom: 4px;
+    text-align: left;
+}
+.form-field {
+    display: flex;
+    flex-direction: column;
+    width: 527px;
+}
+.form-field-full {
+    width: 100%;
+    max-width: 1096px;
+    margin: 0 auto;
 }
 
-
+.form-row {
+    display: flex;
+    justify-content: center;
+    gap: 42px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1096px;
+}
 
 input[type="email"] {
-    height: 94px;
-    width: 527px;
-
+    height: 56px;
+    width: 100%;
     border: none;
-    border-bottom: solid 2px;
-
-
+    border-bottom: 2px solid #d0d0d0;
+    color: #4EA487;
+    font-family: 'Palanquin', sans-serif;
+    font-size: 20px;
+    background: transparent;
 }
 
 .contact-form {
@@ -622,9 +660,9 @@ input[type="email"] {
 
 .container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 56px;
-
 }
 
 .form-checkbox {
@@ -866,6 +904,6 @@ input[type="email"] {
     }
 
     .faq-content {
-        padding: 0 18px 14px;
+        padding: 12px 18px 14px;
     }
 }
