@@ -38,6 +38,7 @@ wird in style.css per @import eingebunden */
     src: url('../../Assets/Cristian/Fonts/palanquin-v17-latin-700.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 main {
     max-width: 1200px;
     margin: 80px auto;
@@ -79,10 +80,11 @@ main {
     font-size: 28px;
     line-height: 1.4;
     color: rgba(84, 55, 13, 1);
-    
+
     margin-bottom: 40px;
 }
-.meta-info{
+
+.meta-info {
     font-family: Palanquin;
     font-size: 16px;
 }
@@ -99,11 +101,13 @@ main {
     text-align: center;
     width: 272px;
 }
-.about-me > img{
+
+.about-me>img {
     height: 120px;
     width: 120px;
     border-radius: 50%;
 }
+
 .about-me h3,
 .about-me p {
     font-family: 'Palanquin';
@@ -129,44 +133,59 @@ main {
     gap: 5px;
 }
 
-article p, .highlights, .tipps, .share{
+article p,
+.highlights,
+.tipps,
+.share {
     line-height: 1.4;
     font-family: 'Palanquin';
     font-size: 24px;
 }
-.tipps h3{
+
+.tipps h3 {
     font-family: 'Palanquin';
     font-size: 28px;
 }
+
 figure {
     display: flex;
     justify-content: center;
     padding: 90px 0px;
 }
+
 video {
     border-radius: 40px;
+    max-width: 100%;
+    height: auto;
 }
-figure + p, .highlights{
+
+figure+p,
+.highlights {
     margin-bottom: 30px;
 }
-.highlights ul{
+
+.highlights ul {
     list-style-type: disc;
     padding-left: 30px;
 }
+
 .highlights li::marker {
     font-size: 10px;
 }
-.highlights + p{
+
+.highlights+p {
     margin-bottom: 150px;
 }
-.tipps{
+
+.tipps {
     margin: 0px 35px 90px 85px;
     padding: 20px 16px;
     background-color: var(--light-green);
     border-radius: 30px;
     position: relative;
 }
-.title-tipps{
+
+.title-tipps {
     width: fit-content;
     padding: 10px 20px;
     display: flex;
@@ -174,17 +193,19 @@ figure + p, .highlights{
     gap: 5px;
     border-radius: 30px;
     position: absolute;
-    top: -45px;
-    left: -80px;
+    top: -60px;
+    left: -30px;
     background-color: var(--dark-green);
     color: var(--yellow);
     transform: rotate(-20deg);
 }
-.useful-link{
+
+.useful-link {
     color: var(--dark-green);
     font-weight: bold;
 }
-.share{
+
+.share {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -193,17 +214,22 @@ figure + p, .highlights{
     width: 490px;
     height: 150px;
 }
-.share p{
+
+.share p {
     text-align: center;
     font-family: 'Arima';
 }
-.share-links-wrapper{
+
+.share-links-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.hover-links{
+
+
+
+.sm-links {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -211,7 +237,8 @@ figure + p, .highlights{
     color: var(--dark-green);
     display: none;
 }
-.hover-links a{
+
+.sm-links a {
     font-family: 'Arima';
     font-weight: 600;
     font-size: 18px;
@@ -219,10 +246,12 @@ figure + p, .highlights{
 
     text-decoration-line: underline;
 }
-.hover-links a:active{
+
+.sm-links a:active {
     font-weight: 700;
 }
-.share-link-container{
+
+.share-link-container {
     background-color: var(--dark-green);
     border-radius: 30px;
     padding: 10px 24px;
@@ -230,8 +259,10 @@ figure + p, .highlights{
     display: flex;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
 }
-.share-link-container a {
+
+.share-link-container span {
     font-family: Arima;
     font-size: 24px;
     font-weight: bold;
@@ -239,23 +270,18 @@ figure + p, .highlights{
 
     cursor: pointer;
 }
-.hover-share-icon-two{
+
+.click-share-icon-two {
     width: 24px;
     height: 27px;
     display: none;
 }
 
-.share-links-wrapper:hover .hover-share-icon-one{
-    display: none;
-}
-.share-links-wrapper:hover .hover-links,
-.share-links-wrapper:hover .hover-share-icon-two{
-    display: flex;
-}
-.share > p{
+.share>p {
     position: relative;
 }
-.share-pfeil-icon{
+
+.share-pfeil-icon {
     position: absolute;
     left: -45px;
     bottom: -75px;

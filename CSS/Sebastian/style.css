@@ -137,6 +137,7 @@ body {
     gap: 30px;
     min-height: 152px;
     flex-wrap: wrap; 
+    margin-top: 40px;
 }
 
 .footer-left {
@@ -481,15 +482,17 @@ figure + p, .highlights{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 50px;
 
-    gap: 25px;          
-    width: 490px;
-    width: 100%;
-
-    margin: -40px auto 60px; 
+    width: 100%;        
+    max-width: 490px;   
+    height: 150px;
+    
+    margin: 0 auto;    
 }
 .share p{
     text-align: center;
+    font-family: 'Arima';
 }
 .share-links-wrapper{
     display: flex;
@@ -497,7 +500,10 @@ figure + p, .highlights{
     justify-content: center;
     gap: 10px;
 }
-.hover-links{
+ 
+
+
+.sm-links{
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -505,7 +511,7 @@ figure + p, .highlights{
     color: var(--dark-green);
     display: none;
 }
-.hover-links a{
+.sm-links a{
     font-family: 'Arima';
     font-weight: 600;
     font-size: 18px;
@@ -513,7 +519,7 @@ figure + p, .highlights{
 
     text-decoration-line: underline;
 }
-.hover-links a:active{
+.sm-links a:active{
     font-weight: 700;
 }
 .share-link-container{
@@ -524,8 +530,9 @@ figure + p, .highlights{
     display: flex;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
 }
-.share-link-container a {
+.share-link-container span {
     font-family: Arima;
     font-size: 24px;
     font-weight: bold;
@@ -533,26 +540,19 @@ figure + p, .highlights{
 
     cursor: pointer;
 }
-.hover-share-icon-two{
+.click-share-icon-two{
     width: 24px;
     height: 27px;
     display: none;
 }
 
-.share-links-wrapper:hover .hover-share-icon-one{
-    display: none;
-}
-.share-links-wrapper:hover .hover-links,
-.share-links-wrapper:hover .hover-share-icon-two{
-    display: flex;
-}
 .share > p{
     position: relative;
 }
 .share-pfeil-icon{
     position: absolute;
-        top: 40px;
-    right: 500px;
+    left: -45px;
+    bottom: -75px;
 }
 /* ===================== */
 /* 📱 MOBILE */
