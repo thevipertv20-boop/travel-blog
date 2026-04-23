@@ -583,7 +583,7 @@ summary::-webkit-details-marker {
 .form-full {
     width: 100% !important;
     max-width: 1096px !important;
-    margin-left: 0 !important;
+    
     border: none !important;
     border-bottom: 2px solid #d0d0d0 !important;
     color: #4EA487 !important;
