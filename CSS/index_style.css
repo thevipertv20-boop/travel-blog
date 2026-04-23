@@ -671,11 +671,50 @@ input[type="email"] {
 }
 
 .form-checkbox {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     margin-top: 30px;
     font-weight: 500;
 }
+.checkbox-icon{
+    height: 18px;
+    width: 18px;
 
+    position: relative;
+}
+.checkbox-icon svg{
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    display: none;
+}
+
+input[type="checkbox"] {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    appearance: none;
+    -webkit-appearance: none;
+    /* height: 18px;
+    width: 18px; */
+    height: 100%;
+    width: 100%;
+    border: solid 3px rgba(84, 55, 13, 1);
+    cursor: pointer;
+}
+input[type="checkbox"]:hover {
+    background-color: rgba(241, 201, 83, 1);
+}
+input[type="checkbox"]:checked {
+    background-color: rgba(78, 164, 135, 1);
+}
+input[type="checkbox"]:checked + svg{
+    display: flex;
+}
 .privacy {
     text-decoration-line: none;
     color: rgba(78, 164, 135, 1);
