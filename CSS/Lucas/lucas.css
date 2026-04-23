@@ -474,25 +474,25 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     justify-content: center;
     gap: 10px;
 }
-.hover-links {
+.sm-links {
     display: flex;
     flex-direction: column;
     gap: 5px;
     color: #1a7a5e;
     display: none;
 }
-.hover-links a {
+.sm-links a {
     font-family: 'Arima', cursive;
     font-weight: 600;
     font-size: 18px;
     color: #1a7a5e;
     text-decoration-line: underline;
 }
-.hover-links a:active {
+.sm-links a:active {
     font-weight: 700;
 }
 .share-link-container {
-    background-color: #1a7a5e;
+    background-color: rgba(78, 164, 135, 1);
     border-radius: 30px;
     padding: 10px 24px;
     display: flex;
@@ -510,17 +510,10 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 .share-btn-label {
     color: #F1C953;
 }
-.hover-share-icon-two {
+.click-share-icon-two {
     width: 24px;
     height: 27px;
     display: none;
-}
-.share-links-wrapper:hover .hover-share-icon-one {
-    display: none;
-}
-.share-links-wrapper:hover .hover-links,
-.share-links-wrapper:hover .hover-share-icon-two {
-    display: flex;
 }
 .share > p {
     position: relative;
@@ -529,6 +522,12 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     position: absolute;
     top: 40px;
     right: 500px;
+}
+.share-link-container span{
+    color: rgba(241, 201, 83, 1);
+    font-family: 'Arima';
+    font-size: 24px;
+    font-weight: bold;
 }
 
 /* Footer */
