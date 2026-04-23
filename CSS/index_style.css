@@ -719,8 +719,8 @@ input[type="checkbox"]:checked + svg{
 .privacy {
     text-decoration-line: none;
     color: rgba(78, 164, 135, 1);
+    font-weight: 500;
 }
-
 .btn-send {
     padding: 10px 30px;
     border: 1px solid #aaa;
