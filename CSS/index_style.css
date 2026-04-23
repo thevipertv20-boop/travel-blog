@@ -721,26 +721,37 @@ input[type="checkbox"]:checked + svg{
     color: rgba(78, 164, 135, 1);
     font-weight: 500;
 }
-.btn-send {
+.btn-send{
+     display: block;
+    margin: 20px auto;
     padding: 10px 30px;
+    background-color: rgba(78, 164, 135, 1);
+    color: rgba(241, 201, 83, 1);
+    font-family: 'Arima';
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 25px;
+    border: none; 
+    cursor: pointer;
+     border: 1px solid white;
+}
+.btn-send:active {
+   
     border: 1px solid #aaa;
     border-radius: 25px;
-    /* macht ihn oval */
     background: transparent;
     color: #777;
-    font-size: 16px;
+    cursor: pointer;
+}
+.btn-send:visited {
+   
+    border: 1px solid #aaa;
+    border-radius: 25px;
+    background: transparent;
+    color: #777;
     cursor: pointer;
 }
 
-.btn-send:hover {
-    background: #aaa;
-    color: white;
-}
-
-.btn-send {
-    display: block;
-    margin: 20px auto;
-}
 
 
 /* =============================================
@@ -842,16 +853,6 @@ input[type="checkbox"]:checked + svg{
         font-size: 20px;
     }
 
-    .hero {
-        height: 530px;
-        padding: 0;
-    }
-
-    .card {
-        width: 100%;
-        max-width: none;
-    }
-
     .highlights,
     .faq,
     .contact {
@@ -871,43 +872,6 @@ input[type="checkbox"]:checked + svg{
 }
 
 @media (max-width: 520px) {
-    .hero {
-        height: 530px;
-        padding: 0;
-    }
-
-    .card {
-        width: 100%;
-        max-width: none;
-        height: 100%;
-        flex-direction: column;
-    }
-
-    .text-side {
-        flex: 0 0 auto;
-        padding: 24px;
-    }
-
-    .text-side {
-        flex: none;
-        padding: 24px;
-    }
-
-    .badge {
-        left: 50%;
-        top: auto;
-        bottom: 10px;
-        transform: translateX(-50%) translateY(160px);
-        animation: badgeSlideUpMobile 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.9s forwards;
-    }
-
-    @keyframes badgeSlideUpMobile {
-        to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-    }
-
     .section-title {
         font-size: 24px;
     }
