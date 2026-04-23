@@ -99,7 +99,11 @@ main {
     text-align: center;
     width: 272px;
 }
-
+.about-me > img{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+}
 .about-me h3,
 .about-me p {
     font-family: 'Palanquin';
@@ -191,6 +195,7 @@ figure + p, .highlights{
 }
 .share p{
     text-align: center;
+    font-family: 'Arima';
 }
 .share-links-wrapper{
     display: flex;
