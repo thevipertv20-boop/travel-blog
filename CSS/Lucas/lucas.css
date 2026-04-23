@@ -685,45 +685,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     }
 }
 
-@media (max-width: 520px) {
-    /* Article header stacked */
-    .article-header {
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
-    }
-    .article-intro {
-        align-items: center;
-        text-align: center;
-    }
-    .title-group {
-        align-items: center;
-    }
-    .article-intro h1 {
-        font-size: 40px;
-    }
-    .tagline {
-        font-size: 24px;
-    }
-    .subtitle {
-        font-size: 18px;
-        margin-bottom: 16px;
-    }
-    .actions {
-        justify-content: center;
-        gap: 12px;
-    }
-    .action {
-        font-size: 14px;
-    }
-
-    /* Author card */
-    .author-box {
-        width: 100%;
-        max-width: 320px;
-        align-self: center;
-    }
-
+/* Carousel switches to mobile at 767px */
+@media (max-width: 767px) {
     /* Carousel: 1 card with peek */
     .carousel-wrap h2 {
         font-size: 20px;
@@ -811,6 +774,46 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
         width: 36px;
         border-radius: 999px;
         background: #4EA487;
+    }
+}
+
+@media (max-width: 520px) {
+    /* Article header stacked */
+    .article-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .article-intro {
+        align-items: center;
+        text-align: center;
+    }
+    .title-group {
+        align-items: center;
+    }
+    .article-intro h1 {
+        font-size: 40px;
+    }
+    .tagline {
+        font-size: 24px;
+    }
+    .subtitle {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+    .actions {
+        justify-content: center;
+        gap: 12px;
+    }
+    .action {
+        font-size: 14px;
+    }
+
+    /* Author card */
+    .author-box {
+        width: 100%;
+        max-width: 320px;
+        align-self: center;
     }
 
     /* Body text 16px */
