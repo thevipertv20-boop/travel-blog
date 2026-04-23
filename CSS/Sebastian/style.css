@@ -137,6 +137,7 @@ body {
     gap: 30px;
     min-height: 152px;
     flex-wrap: wrap; 
+    margin-top: 40px;
 }
 
 .footer-left {
@@ -476,14 +477,18 @@ figure + p, .highlights{
     transform: rotate(-20deg);
 }
 
-.share{
+.share {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    width: 490px;
+
+    width: 100%;        
+    max-width: 490px;   
     height: 150px;
+    
+    margin: 0 auto;    
 }
 .share p{
     text-align: center;
