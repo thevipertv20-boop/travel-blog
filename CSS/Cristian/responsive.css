@@ -8,6 +8,14 @@
      320–479    — Kleines Smartphone
    ============================================= */
 
+   @media screen and (min-width: 1280px) {
+    .title-tipps {
+
+    top: -50px;
+    left: -70px;
+   
+}
+   }
 
 /* =============================================
    SHARE-BUTTON: Pfeil-Icon Sichtbarkeit
@@ -45,6 +53,7 @@
 
 /* Unter 768px: Desktop-Pfeil weg, Mobile-Pfeil rein */
 @media screen and (max-width: 767px) {
+    
     .share-pfeil-icon {
         display: none;
     }
@@ -52,7 +61,7 @@
         display: flex;
         position: absolute;
         left: 5px;
-        top: 60px;
+        top: 50px;
     }
     .share {
         width: 100%;
@@ -180,6 +189,9 @@
     }
 
     /* --- BLOG-SEITEN: Article body --- */
+    article {
+        padding: 0px;
+    }
     article p,
     .highlights,
     .tipps,
@@ -187,7 +199,7 @@
         font-size: 20px;
     }
     .tipps h3 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     /* --- Sebastian: Cards --- */
@@ -203,7 +215,7 @@
 
     /* --- BLOG-SEITEN: Tipps-Badge Positionierung --- */
     .tipps {
-        margin: 0 20px 60px 60px;
+        margin: 20px 10px 60px 10px;
     }
 
     /* --- IMPRESSUM --- */
@@ -389,25 +401,22 @@
         padding-left: 20px;
     }
     .highlights + p {
-        margin-bottom: 60px;
+        margin-bottom: 120px;
     }
 
     /* --- BLOG-SEITEN: Tipps --- */
     .tipps {
-        margin: 20px 10px 60px 50px;
+        margin: 20px 10px 60px 10px;
     }
     .title-tipps {
         padding: 5px 10px;
-        top: -22px;
-        left: -40px;
+        top: -50px;
+        left: -20px;
     }
     .title-tipps h3 {
-        font-size: 14px;
+        font-size: 28px;
     }
-    .title-tipps img {
-        width: 18px;
-        height: 18px;
-    }
+   
 
     /* --- Sebastian: Diagramm & Cards --- */
     .diagramm {
@@ -709,25 +718,25 @@
         padding-left: 16px;
     }
     .highlights + p {
-        margin-bottom: 40px;
+        margin-bottom: 120px;
     }
 
     /* --- BLOG-SEITEN: Tipps --- */
     .tipps {
-        margin: 20px 0 50px 40px;
+        margin: 20px 10px 60px 10px;
         padding: 16px 12px;
     }
     .title-tipps {
         padding: 4px 8px;
-        top: -18px;
+        top: -45px;
         left: -20px;
     }
     .title-tipps h3 {
-        font-size: 12px;
+        font-size: 28px;
     }
     .title-tipps img {
-        width: 14px;
-        height: 14px;
+        width: 40px;
+        height: 40px;
     }
 
     /* --- Sebastian: Diagramm & Cards --- */

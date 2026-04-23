@@ -1,4 +1,5 @@
 const wrapper = document.querySelector(".share-links-wrapper");
+
 wrapper.addEventListener("click", () => {
     const links = document.querySelector(".sm-links");
     links.style.display = "flex";
