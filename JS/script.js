@@ -4,8 +4,8 @@ wrapper.addEventListener("click", () => {
     links.style.display = "flex";
 
     const linkIconGreen = document.querySelector(".click-share-icon-two");
-    linkIconGreen .style.display = "flex";
+    linkIconGreen.style.display = "flex";
 
     const linkIconYellow = document.querySelector(".click-share-icon-one");
-    linkIconYellow .style.display = "none";
+    linkIconYellow.style.display = "none";
 });
