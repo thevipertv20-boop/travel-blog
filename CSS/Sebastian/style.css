@@ -551,8 +551,8 @@ figure + p, .highlights{
 }
 .share-pfeil-icon{
     position: absolute;
-    left: -45px;
-    bottom: -75px;
+        top: 40px;
+    right: 500px;
 }
 /* ===================== */
 /* 📱 MOBILE */
