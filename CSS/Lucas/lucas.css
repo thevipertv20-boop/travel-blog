@@ -527,8 +527,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 }
 .share-pfeil-icon {
     position: absolute;
-    left: -45px;
-    bottom: -75px;
+    top: 40px;
+    right: 500px;
 }
 
 /* Footer */
@@ -846,6 +846,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
         height: auto;
         top: 40px;
         right: 500px;
+        
     }
 
     /* Default mobile share state */
