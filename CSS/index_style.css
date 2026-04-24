@@ -234,7 +234,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     z-index: 1;
     transform: translateX(100%);
     animation: swooshSlide 2.0s linear 1.4s forwards;
-    background: url('../../Assets/Lucas/hero_bg.jpg') center/cover no-repeat;
+    background: url('../Assets/Lucas/hero_bg.jpg') center/cover no-repeat;
     background-color: #c0392b;
     clip-path: url(#swooshClip);
 }
