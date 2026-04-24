@@ -1,3 +1,82 @@
+Cristian Jaraba
+cristian.jaraba
+Im Sprachchat
+
+Lucas L — 17.04.2026 10:54
+#LEFTmenu {
+    line-height:30px;
+    width: 200px; 
+    float: left; 
+    margin-top: 10px; 
+    background-color: #FFFFFF;}
+
+#LEFTmenu ul {
+    padding: 0;
+    margin: 0 0 20px 15px;
+    list-style: none;
+    list-style-type: none;
+    font-size: 14px;  }
+
+#LEFTmenu ul li a:link, a:visited {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    color: #333;  }
+
+#LEFTmenu ul li a:hover {
+    color: #CC3366;  }
+
+ #LEFTmenu ul li a:active {
+    color: #33FFFF;  }
+Lucas L — 17.04.2026 11:02
+https://www.w3schools.com/cssref/tryit.php?filename=trycss_sel_target
+W3Schools online HTML editor
+The W3Schools online code editor allows you to edit code and view the result in your browser
+Lucas L — 17.04.2026 11:12
+/* When URL is #home, highlight Home link */
+body:has(#home:target) a[href="#home"],
+body:has(#about:target) a[href="#about"],
+body:has(#services:target) a[href="#services"],
+body:has(#contact:target) a[href="#contact"] {
+    color: #ffd700;
+    background: rgba(255, 215, 0, 0.15);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+}
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+</nav>
+
+<section id="home">...</section>
+<section id="about">...</section>
+Lucas L — 17.04.2026 11:49
+https://developer-akademie.teachable.com/courses/modul-5-webseite-fur-smartphones-optimieren/lectures/65220700
+03 LoVe and HATe
+
+Lucas L — 21.04.2026 11:32
+https://codepen.io/marczking/pen/ZEBywg
+CodePen
+Marc
+ZEBywg
+...
+ZEBywg
+Cristian Jaraba — 22.04.2026 15:34
+Hi Lucas bist du da?
+Lucas L — 22.04.2026 15:34
+JO
+Cristian Jaraba — 22.04.2026 15:34
+Komm bitte kurz rein
+Lucas L — 10:43
+/* DA | Umschulung zum Fachinformatiker AE | Projekt Sakura
+   responsive.css — Zentrale Media Queries für ALLE Seiten
+   Breakpoints:
+     ≥ 1440px   — Large desktop
+     1280–1439  — Laptop / Desktop
+     768–1279   — Tablet landscape / kleiner Laptop
+
+responsive.css
+19 kB
+﻿
+Lucas L
+lohmi_
 /* DA | Umschulung zum Fachinformatiker AE | Projekt Sakura
    responsive.css — Zentrale Media Queries für ALLE Seiten
    Breakpoints:
@@ -296,36 +375,16 @@
         z-index: 1;
         animation: mobileShrink 0.8s cubic-bezier(0.22, 1, 0.36, 1) 1.4s forwards;
     }
-    /* Text: stays left (no slide), keeps rise-in animations.
-       background: #F5C842 ensures text is always on yellow even at the blob edge. */
+    /* No text below 767px — just blob, badge and photo */
     .text-side {
-        flex: 0 0 55%;
-        max-width: 55%;
-        padding: 24px 20px;
-        z-index: 2;
-        transform: translateX(0);
-        animation: none;
-        justify-content: center;
-        background: #F5C842;
+        display: none;
     }
-    .title {
-        font-size: 32px;
-        opacity: 0;
-        transform: translateY(28px);
-        animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
-    }
-    .subtitle {
-        font-size: 14px;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: riseIn 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.85s forwards;
-    }
-    /* Badge: sits at the yellow/photo boundary after blob has shrunk */
+    /* Badge: sits on the organic blob corner */
     .badge {
         width: 110px;
         height: 110px;
-        left: 55%;
-        top: 48%;
+        left: 42%;
+        top: 45%;
         bottom: auto;
         transform: translateX(-50%) translateY(110px);
         animation: badgeSlideUpMobile 0.7s cubic-bezier(0.22, 1, 0.36, 1) 2.5s forwards;
