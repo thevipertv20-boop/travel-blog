@@ -498,6 +498,7 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
     display: flex;
     gap: 10px;
     align-items: center;
+    cursor: pointer;
 }
 .share-link-container a {
     font-family: 'Arima', cursive;
