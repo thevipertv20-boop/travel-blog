@@ -552,6 +552,23 @@
 
 
 /* =============================================
+   LARGE DESKTOP — 1440px und größer
+   Richtet Header & Footer-Padding an der
+   zentrierten max-width: 1200px Content-Spalte aus
+   ============================================= */
+@media screen and (min-width: 1440px) {
+    .haupt-header {
+        padding-left:  calc((100% - 1200px) / 2);
+        padding-right: calc((100% - 1200px) / 2);
+    }
+    .footer {
+        padding-left:  calc((100% - 1200px) / 2);
+        padding-right: calc((100% - 1200px) / 2);
+    }
+}
+
+
+/* =============================================
    KLEINES SMARTPHONE — 320px–479px
    ============================================= */
 @media screen and (min-width: 320px) and (max-width: 479px) {
