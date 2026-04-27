@@ -22,7 +22,7 @@ html {
     font-family: 'Arima';
     font-style: normal;
     font-weight: 400;
-    src: url('../../Assets/Cristian/Fonts/arima-v7-latin-500.woff2') format('woff2');
+    src: url("../../Assets/Cristian/Fonts/arima-v7-latin-regular.woff2");
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 /* arima-500 - latin */
@@ -50,7 +50,7 @@ html {
     font-family: 'Palanquin';
     font-style: normal;
     font-weight: 400;
-    src: url('/../../Assets/Cristian/Fonts/palanquin-v17-latin-regular.woff2') format('woff2');
+    src: url('../../Assets/Cristian/Fonts/palanquin-v17-latin-regular.woff2') format('woff2');
     /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
