@@ -345,8 +345,8 @@ body:has(#contact:target) .haupt-header .contact-a[href="#contact"] {
 input {
     margin-bottom: 45px;
     margin-left: 25px;
-    width: 30px;
-    height: 30px;
+    margin-left: 0;
+    
 }
 
 .highlight-showcase {
