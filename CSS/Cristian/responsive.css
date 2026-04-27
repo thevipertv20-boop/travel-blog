@@ -730,7 +730,7 @@
     }
     .about-me h3,
     .about-me p {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     /* --- BLOG-SEITEN: Article body --- */
@@ -738,7 +738,7 @@
     article ul,
     article ol,
     article ol a {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     /* --- BLOG-SEITEN: Video/Figure --- */
